@@ -29,6 +29,7 @@ public class LoginActivity extends AppCompatActivity {
         password = findViewById(R.id.password);
         login = findViewById(R.id.login);
         myPref = getSharedPreferences("login",MODE_PRIVATE);
+        //https://stackoverflow.com/questions/2154438/how-do-i-implement-a-remember-me-function-in-an-android-activity
         final SharedPreferences.Editor editor  = myPref.edit();
 
         email.setText(myPref.getString("email",null));
