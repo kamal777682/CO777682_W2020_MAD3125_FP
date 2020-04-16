@@ -1,8 +1,10 @@
-package com.kamal.co777682_w2020_mad3125_fp;
+package com.kamal.co777682_w2020_mad3125_fp.UI;
 
 import androidx.appcompat.app.AppCompatActivity;
 
 import android.os.Bundle;
+
+import com.kamal.co777682_w2020_mad3125_fp.R;
 
 public class CustomerListActivity extends AppCompatActivity {
 

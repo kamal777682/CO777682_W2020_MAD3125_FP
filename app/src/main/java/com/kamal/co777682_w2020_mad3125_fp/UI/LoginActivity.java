@@ -1,4 +1,4 @@
-package com.kamal.co777682_w2020_mad3125_fp;
+package com.kamal.co777682_w2020_mad3125_fp.UI;
 
 import androidx.appcompat.app.AppCompatActivity;
 
@@ -12,6 +12,7 @@ import android.widget.Button;
 import android.widget.CheckBox;
 
 import com.google.android.material.textfield.TextInputEditText;
+import com.kamal.co777682_w2020_mad3125_fp.R;
 
 public class LoginActivity extends AppCompatActivity {
 
@@ -25,7 +26,7 @@ public class LoginActivity extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_login);
         email = findViewById(R.id.txtemail);
-        password = findViewById(R.id.txtpassword);
+        password = findViewById(R.id.txtpassword);//stackoverflow.com/questions/3685790/how-to-switch-between-hide-and-view-password
         btnlogin = findViewById(R.id.login);
         rememberMe = findViewById(R.id.rememberMe);
         myPref = getSharedPreferences("MyPref",MODE_PRIVATE);
@@ -48,7 +49,7 @@ public class LoginActivity extends AppCompatActivity {
                         editor.putString("email",txtemail);
                         editor.putString("password",txtpwd);
                         editor.apply();
-                        Intent mIntent = new Intent(LoginActivity.this,CustomerListActivity.class);
+                        Intent mIntent = new Intent(LoginActivity.this, CustomerListActivity.class);
                         startActivity(mIntent);
                     }
                     else {
