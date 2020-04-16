@@ -9,8 +9,12 @@
         android:roundIcon="@mipmap/ic_launcher_round"
         android:supportsRtl="true"
         android:theme="@style/AppTheme">
-        <activity android:name=".UI.CustomerListActivity"
-            android:parentActivityName=".UI.LoginActivity"/>
+        <activity android:name=".UI.AddMobileBillActivity"></activity>
+        <activity android:name=".UI.AddInternetBillActivity" />
+        <activity android:name=".UI.AddHydroBillActivity" />
+        <activity
+            android:name=".UI.CustomerListActivity"
+            android:parentActivityName=".UI.LoginActivity" />
         <activity
             android:name=".UI.LoginActivity"
             android:parentActivityName=".UI.SplashActivity" />
