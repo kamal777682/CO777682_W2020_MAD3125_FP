@@ -10,15 +10,12 @@ public class Customers implements Serializable {
     private String email;
     private String city;
 
-    public Customers(String fullName) {
-        this.fullName = fullName;
-    }
 
-    public Customers(String customerId, String firtName, String lastName,String fullName, String email, String city) {
+    public Customers(String customerId, String firtName, String lastName, String email, String city) {
         this.customerId = customerId;
         this.firtName = firtName;
         this.lastName = lastName;
-        this.fullName = fullName;
+        this.fullName = getFullName();
         this.email = email;
         this.city = city;
     }

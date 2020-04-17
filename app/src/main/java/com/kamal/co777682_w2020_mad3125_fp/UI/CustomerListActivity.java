@@ -7,6 +7,7 @@ import androidx.recyclerview.widget.RecyclerView;
 import android.os.Bundle;
 
 import com.kamal.co777682_w2020_mad3125_fp.Adapters.CustomerListAdapter;
+import com.kamal.co777682_w2020_mad3125_fp.DataStorage;
 import com.kamal.co777682_w2020_mad3125_fp.Models.Customers;
 import com.kamal.co777682_w2020_mad3125_fp.R;
 
@@ -31,7 +32,8 @@ public class CustomerListActivity extends AppCompatActivity {
         }
         private void displayCustomers()
         {
-            customers.
+            DataStorage.getInstance().loadCustomerDetails();
+            customers = new ArrayList<>(DataStorage.getInstance().getCustomers());
         }
 
 }
