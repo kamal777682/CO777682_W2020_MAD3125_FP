@@ -23,6 +23,11 @@ public class CustomerListAdapter extends  RecyclerView.Adapter<CustomerListAdapt
 {
 
     private final ArrayList<Customers> customerArrayList;
+    public CustomerListAdapter(ArrayList<Customers> customerArrayList)
+    {
+        this.customerArrayList = customerArrayList;
+    }
+
 
     @NonNull
     @Override
@@ -33,14 +38,14 @@ public class CustomerListAdapter extends  RecyclerView.Adapter<CustomerListAdapt
     }
 
     @Override
-    public void onBindViewHolder(@NonNull final CustomersViewHolder holder, int position) {
-        final Customers mCustomers = this.customerArrayList.get(position);
+    public void onBindViewHolder(@NonNull final CustomersViewHolder holder, final int position) {
+        Customers mCustomers = this.customerArrayList.get(position);
         holder.txtName.setText(mCustomers.getFullName());
-        holder.email.setText(mCustomers.getEmail());
         holder.itemView.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                Toast.makeText(holder.itemView.getContext(), mCustomers.getFirtName(),Toast.LENGTH_SHORT).show();
+                Customers mCustomers = customerArrayList.get(position);
+                Toast.makeText(holder.itemView.getContext(), mCustomers.getFullName(),Toast.LENGTH_SHORT).show();
                 Log.d("CLICK","hello");
                 Intent mIntent= new Intent(holder.itemView.getContext(), CustomerListActivity.class);
                 holder.itemView.getContext().startActivity(mIntent.putExtra("CustomersObj",mCustomers));
@@ -56,20 +61,12 @@ public class CustomerListAdapter extends  RecyclerView.Adapter<CustomerListAdapt
     }
 
     public class CustomersViewHolder extends RecyclerView.ViewHolder {
-        TextView txtName;
-        TextView email;
-        ImageView img;
+        TextInputEditText txtName;
         public CustomersViewHolder(@NonNull View itemView) {
             super(itemView);
 
                 txtName = itemView.findViewById(R.id.txtName);
-                email = itemView.findViewById(R.id.txtEmail);
-                img = itemView.findViewById(R.id.img);
             }
         }
-        public CustomerListAdapter(ArrayList<Customers> customerArrayList)
-        {
-            this.customerArrayList = customerArrayList;
-        }
- }
+     }
 

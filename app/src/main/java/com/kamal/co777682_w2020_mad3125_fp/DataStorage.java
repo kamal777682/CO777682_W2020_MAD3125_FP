@@ -32,7 +32,7 @@ public class DataStorage {
          customerBills.updateValue(bill, forKey: billId)
        }*/
     public void loadCustomerDetails() {
-        Customers c1 = new Customers("C001", "Kamalpreet", "Kaur", "Kamal1234@gmail.com", "Brampton");
+       Customers c1 = new Customers("C001", "Kamalpreet", "Kaur", "Kamal1234@gmail.com", "Brampton");
         Customers c2 = new Customers("C002", "Nikita", "Sandhu", "niksandhu23@gmail.com", "Missisauga");
         Customers c3 = new Customers("C003", "Jyoti", "Thomas", "jyotiT@outlook.com", "Scorborough");
        /* let i1 = Internet(billId: "I001", billDate: "20/02/2019", billType: .Internet, totalBill : 40, internetProvider: "Rogers", internetGBUsed: 10)
