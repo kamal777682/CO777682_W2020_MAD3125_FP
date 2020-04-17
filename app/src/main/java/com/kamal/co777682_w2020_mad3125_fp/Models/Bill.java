@@ -6,7 +6,7 @@ public class Bill implements Serializable {
     private String billId;
     private String billDate;
     private String billType;
-    private String totalBillAmount;
+    private Double totalBillAmount;
 
     public String getBillId() {
         return billId;
@@ -32,15 +32,15 @@ public class Bill implements Serializable {
         this.billType = billType;
     }
 
-    public String getTotalBillAmount() {
+    public Double getTotalBillAmount() {
         return totalBillAmount;
     }
 
-    public void setTotalBillAmount(String totalBillAmount) {
+    public void setTotalBillAmount(Double totalBillAmount) {
         this.totalBillAmount = totalBillAmount;
     }
 
-    public Bill(String billId, String billDate, String billType, String totalBillAmount) {
+    public Bill(String billId, String billDate, String billType, Double totalBillAmount) {
         this.billId = billId;
         this.billDate = billDate;
         this.billType = billType;

@@ -1,6 +1,9 @@
 package com.kamal.co777682_w2020_mad3125_fp.Models;
 
 import java.io.Serializable;
+import java.util.ArrayList;
+import java.util.Collection;
+import java.util.HashMap;
 
 public class Customers implements Serializable {
     private String customerId;
@@ -9,6 +12,8 @@ public class Customers implements Serializable {
     private String fullName;
     private String email;
     private String city;
+    private HashMap<String,Bill>bills = new HashMap<>();
+    private Double totalBill = 0.0;
 
 
     public Customers(String customerId, String firtName, String lastName, String email, String city) {
@@ -18,6 +23,17 @@ public class Customers implements Serializable {
         this.fullName = getFullName();
         this.email = email;
         this.city = city;
+    }
+    public void addBill(String billId, Bill bill){
+        this.bills.put(billId,bill);
+        totalBill = totalBill + bill.getTotalBillAmount();
+
+    }
+    public ArrayList<Bill> getAllBills(){
+        Collection<Bill> billCollection = bills.values();
+        ArrayList<Bill> billArrayList = new ArrayList<Bill>(billCollection);
+        return billArrayList;
+
     }
 
     public String getFullName() {
@@ -66,5 +82,21 @@ public class Customers implements Serializable {
 
     public void setCity(String city) {
         this.city = city;
+    }
+
+    public HashMap<String, Bill> getBills() {
+        return bills;
+    }
+
+    public void setBills(HashMap<String, Bill> bills) {
+        this.bills = bills;
+    }
+
+    public Double getTotalBill() {
+        return totalBill;
+    }
+
+    public void setTotalBill(Double totalBill) {
+        this.totalBill = totalBill;
     }
 }
