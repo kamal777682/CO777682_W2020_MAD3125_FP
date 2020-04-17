@@ -16,6 +16,7 @@ import com.google.android.material.textfield.TextInputEditText;
 import com.kamal.co777682_w2020_mad3125_fp.Models.Customers;
 import com.kamal.co777682_w2020_mad3125_fp.R;
 import com.kamal.co777682_w2020_mad3125_fp.UI.CustomerListActivity;
+import com.kamal.co777682_w2020_mad3125_fp.UI.ShowBillDetailsActivity;
 
 import java.util.ArrayList;
 
@@ -46,9 +47,7 @@ public class CustomerListAdapter extends  RecyclerView.Adapter<CustomerListAdapt
             public void onClick(View v) {
                 Customers mCustomers = customerArrayList.get(position);
                 Toast.makeText(holder.itemView.getContext(), mCustomers.getFullName(),Toast.LENGTH_SHORT).show();
-                Log.d("CLICK","hello");
-                Intent mIntent= new Intent(holder.itemView.getContext(), CustomerListActivity.class);
-                holder.itemView.getContext().startActivity(mIntent.putExtra("CustomersObj",mCustomers));
+                Intent mIntent= new Intent(holder.itemView.getContext(), ShowBillDetailsActivity.class);holder.itemView.getContext().startActivity(mIntent.putExtra("CustomersObj",mCustomers));
 
             }
         });
