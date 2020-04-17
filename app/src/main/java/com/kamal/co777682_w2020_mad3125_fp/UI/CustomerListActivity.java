@@ -1,10 +1,14 @@
 package com.kamal.co777682_w2020_mad3125_fp.UI;
 
+import androidx.annotation.NonNull;
 import androidx.appcompat.app.AppCompatActivity;
 import androidx.recyclerview.widget.LinearLayoutManager;
 import androidx.recyclerview.widget.RecyclerView;
 
+import android.content.Intent;
 import android.os.Bundle;
+import android.view.Menu;
+import android.view.MenuItem;
 
 import com.kamal.co777682_w2020_mad3125_fp.Adapters.CustomerListAdapter;
 import com.kamal.co777682_w2020_mad3125_fp.DataStorage;
@@ -36,5 +40,29 @@ public class CustomerListActivity extends AppCompatActivity {
             customers = new ArrayList<>(DataStorage.getInstance().getCustomers());
         }
 
+    //https://javatpoint.com/android-option-menu-example
+
+
+    @Override
+    public boolean onCreateOptionsMenu(Menu menu) {
+        getMenuInflater().inflate(R.menu.customer_menu,menu);
+        return true;
+    }
+
+    @Override
+    public boolean onOptionsItemSelected(@NonNull MenuItem item) {
+        switch (item.getItemId()) {
+            case R.id.logout:
+                Intent lintent = new Intent((CustomerListActivity.this), LoginActivity.class);
+                startActivity(lintent);
+                return true;
+            case R.id.addCustomer:
+                Intent cIntent = new Intent((CustomerListActivity.this), AddNewCustomerActivity.class);
+                startActivity(cIntent);
+                return true;
+            default:
+                return super.onOptionsItemSelected(item);
+        }
+    }
 }
 

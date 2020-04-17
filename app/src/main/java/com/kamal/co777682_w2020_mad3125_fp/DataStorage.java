@@ -38,7 +38,7 @@ public class DataStorage {
        Customers c1 = new Customers("C001", "Kamalpreet", "Kaur", "Kamal1234@gmail.com", "Brampton");
         Customers c2 = new Customers("C002", "Nikita", "Sandhu", "niksandhu23@gmail.com", "Missisauga");
         Customers c3 = new Customers("C003", "Jyoti", "Thomas", "jyotiT@outlook.com", "Scorborough");
-        
+
         InternetBill i1 = new InternetBill("I001",  "20/02/2019", 40.00, "Rogers",  10);
         InternetBill i2 = new InternetBill("I002",  "30/5/2020", 150.00, "Freedom",  15);
         InternetBill i3 = new InternetBill("I003",  "14/6/2020", 200.00, "Fido",  20);
