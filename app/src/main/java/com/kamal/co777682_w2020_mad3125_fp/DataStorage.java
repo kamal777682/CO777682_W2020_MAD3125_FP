@@ -2,6 +2,9 @@ package com.kamal.co777682_w2020_mad3125_fp;
 
 import com.kamal.co777682_w2020_mad3125_fp.Models.Bill;
 import com.kamal.co777682_w2020_mad3125_fp.Models.Customers;
+import com.kamal.co777682_w2020_mad3125_fp.Models.HydroBill;
+import com.kamal.co777682_w2020_mad3125_fp.Models.InternetBill;
+import com.kamal.co777682_w2020_mad3125_fp.Models.MobileBill;
 
 import java.util.ArrayList;
 
@@ -35,19 +38,24 @@ public class DataStorage {
        Customers c1 = new Customers("C001", "Kamalpreet", "Kaur", "Kamal1234@gmail.com", "Brampton");
         Customers c2 = new Customers("C002", "Nikita", "Sandhu", "niksandhu23@gmail.com", "Missisauga");
         Customers c3 = new Customers("C003", "Jyoti", "Thomas", "jyotiT@outlook.com", "Scorborough");
+        
+        InternetBill i1 = new InternetBill("I001",  "20/02/2019", 40.00, "Rogers",  10);
+        InternetBill i2 = new InternetBill("I002",  "30/5/2020", 150.00, "Freedom",  15);
+        InternetBill i3 = new InternetBill("I003",  "14/6/2020", 200.00, "Fido",  20);
+        HydroBill h1 =  new HydroBill("H001", "26/04/2018", 110.00, "Planet Energy",  200.00);
+        HydroBill h2 = new HydroBill("H002", "03/09/2019", 50.00,  "OntarioHydro",  700.00);
+        MobileBill m1 = new MobileBill( "M001","07/09/2019",  45.00,"Apple Inc.", "4.5GB + 1000 Min",
+                "4504500577",  4,  100);
 
-        i1 = Internet(billId: "I001", billDate: "20/02/2019", billType: .Internet, totalBill : 40, internetProvider: "Rogers", internetGBUsed: 10)
-
-         i2 = Internet(billId: "I002", billDate: "14/03/2019", billType: .Internet, totalBill: 20 , internetProvider: "Freedom", internetGBUsed: 5)
-         h1 = Hydro(billId: "H001", billDate: "26/04/2018", billType: .Hydro, totalBill: 110, agencyName: "Planet Energy", unitConsumed: 200)let h2 = Hydro(billId: "H002", billDate: "03/09/2019", billType: .Hydro, totalBill: 50, agencyName: "OntarioHydro", unitConsumed: 700)
-         m1 = Mobile(billId: "M001", billDate: "07/09/2019", billType: .Mobile, totalBill: 45, manufacturerName: "Apple Inc.", mobilePlan: "4.5GB + 1000 Min", mobileNumber: "4504500577", internetGBUsed: 4, minuteUsed: 100)
-
-         let m2 = Mobile(billId: "M002", billDate: "08/09/2019", billType: .Mobile, manufacturerName: "Apple Inc.", mobileNumber: "78947800", mobilePlan:"4.5GB + 1000 Min", internetGBUsed: 2, minuteUsed: 200, planRate: 0.95, internetRate: 5)
-
-
-       customers.add(c1);
-       customers.add(c2);
-       customers.add(c3);
+        customers.add(c1);
+        customers.add(c2);
+        customers.add(c3);
+        c1.addBill(i1.getBillId(),i1);
+        c1.addBill(m1.getBillId(),m1);
+        c1.addBill(h1.getBillId(),h1);
+        c2.addBill(h2.getBillId(),h2);
+        c2.addBill(i2.getBillId(),i2);
+        c3.addBill(i3.getBillId(),i3);
 
     }
 }

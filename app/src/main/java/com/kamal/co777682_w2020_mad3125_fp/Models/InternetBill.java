@@ -2,9 +2,9 @@ package com.kamal.co777682_w2020_mad3125_fp.Models;
 
 public class InternetBill extends Bill {
     private String internetProvider;
-    private String internetGBUsed;
+    private int internetGBUsed;
 
-    public InternetBill(String billId, String billDate, Double totalBillAmount, String internetProvider, String internetGBUsed)
+    public InternetBill(String billId, String billDate, Double totalBillAmount, String internetProvider,int internetGBUsed)
     {
         super(billId, billDate, totalBillAmount);
         this.internetProvider = internetProvider;
@@ -19,11 +19,11 @@ public class InternetBill extends Bill {
         this.internetProvider = internetProvider;
     }
 
-    public String getInternetGBUsed() {
+    public int getInternetGBUsed() {
         return internetGBUsed;
     }
 
-    public void setInternetGBUsed(String internetGBUsed) {
+    public void setInternetGBUsed(int internetGBUsed) {
         this.internetGBUsed = internetGBUsed;
     }
 }

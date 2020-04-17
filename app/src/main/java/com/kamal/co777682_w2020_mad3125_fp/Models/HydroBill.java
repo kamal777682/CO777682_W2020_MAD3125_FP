@@ -2,9 +2,9 @@ package com.kamal.co777682_w2020_mad3125_fp.Models;
 
 public class HydroBill extends Bill {
     private String agencyName;
-    private String unitConsumed;
+    private Double unitConsumed;
 
-    public HydroBill(String billId, String billDate, Double totalBillAmount, String agencyName, String unitConsumed) {
+    public HydroBill(String billId, String billDate, Double totalBillAmount, String agencyName, Double unitConsumed) {
         super(billId, billDate, totalBillAmount);
         this.agencyName = agencyName;
         this.unitConsumed = unitConsumed;
@@ -18,11 +18,11 @@ public class HydroBill extends Bill {
         this.agencyName = agencyName;
     }
 
-    public String getUnitConsumed() {
+    public Double getUnitConsumed() {
         return unitConsumed;
     }
 
-    public void setUnitConsumed(String unitConsumed) {
+    public void setUnitConsumed(Double unitConsumed) {
         this.unitConsumed = unitConsumed;
     }
 }
