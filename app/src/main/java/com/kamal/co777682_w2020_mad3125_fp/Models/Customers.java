@@ -6,15 +6,29 @@ public class Customers implements Serializable {
     private String customerId;
     private String firtName;
     private String lastName;
+    private String fullName;
     private String email;
     private String city;
 
-    public Customers(String customerId, String firtName, String lastName, String email, String city) {
+    public Customers(String fullName) {
+        this.fullName = fullName;
+    }
+
+    public Customers(String customerId, String firtName, String lastName,String fullName, String email, String city) {
         this.customerId = customerId;
         this.firtName = firtName;
         this.lastName = lastName;
+        this.fullName = fullName;
         this.email = email;
         this.city = city;
+    }
+
+    public String getFullName() {
+        return (firtName + " " +lastName) ;
+    }
+
+    public void setFullName(String fullName) {
+        this.fullName = fullName;
     }
 
     public String getCustomerId() {

@@ -30,7 +30,9 @@ public class CustomerListActivity extends AppCompatActivity {
         rvcustomerList.setAdapter(CustomerListAdapter);
         }
         private void displayCustomers()
-        {}
+        {
+            customers.
+        }
 
 }
 
