@@ -1,5 +1,6 @@
 package com.kamal.co777682_w2020_mad3125_fp.UI;
 
+import androidx.appcompat.app.ActionBar;
 import androidx.appcompat.app.AppCompatActivity;
 
 import android.app.AlertDialog;
@@ -25,6 +26,8 @@ public class LoginActivity extends AppCompatActivity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_login);
+        ActionBar actionBar = getSupportActionBar();
+        actionBar.setTitle(" Log In");
         email = findViewById(R.id.txtemail);
         password = findViewById(R.id.txtpassword);//stackoverflow.com/questions/3685790/how-to-switch-between-hide-and-view-password
         btnlogin = findViewById(R.id.login);
