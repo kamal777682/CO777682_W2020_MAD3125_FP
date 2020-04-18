@@ -93,13 +93,31 @@
         android:layout_marginStart="8dp"
         android:layout_marginTop="8dp"
         android:layout_marginEnd="8dp"
-        android:hint="Manufacturer Name"
+        android:hint="Mobile Plan"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/txtlayoutBillType">
+        app:layout_constraintTop_toBottomOf="@+id/txtlayoutMName">
 
         <com.google.android.material.textfield.TextInputEditText
-            android:id="@+id/txtManufactureName"
+            android:id="@+id/txtMobileplan"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content" />
+    </com.google.android.material.textfield.TextInputLayout>
+    <com.google.android.material.textfield.TextInputLayout
+        android:id="@+id/txtlayoutMNumber"
+        style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="8dp"
+        android:layout_marginTop="8dp"
+        android:layout_marginEnd="8dp"
+        android:hint="Mobile Number"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/txtlayoutMplan">
+
+        <com.google.android.material.textfield.TextInputEditText
+            android:id="@+id/txtMobileNumber"
             android:layout_width="match_parent"
             android:layout_height="wrap_content" />
     </com.google.android.material.textfield.TextInputLayout>
@@ -110,15 +128,33 @@
         android:layout_width="0dp"
         android:layout_height="wrap_content"
         android:layout_marginStart="8dp"
-        android:layout_marginTop="8dp"
         android:layout_marginEnd="8dp"
         android:hint="Internet GB Used"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/txtlayoutInternetP">
+        app:layout_constraintTop_toBottomOf="@+id/txtlayoutMNumber">
+
 
         <com.google.android.material.textfield.TextInputEditText
             android:id="@+id/txtGBUsed"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content" />
+    </com.google.android.material.textfield.TextInputLayout>
+    <com.google.android.material.textfield.TextInputLayout
+        android:id="@+id/txtlayoutMinUsed"
+        style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="8dp"
+        android:layout_marginEnd="8dp"
+        android:hint="Minute Used"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/txtlayoutGBUsed">
+
+
+        <com.google.android.material.textfield.TextInputEditText
+            android:id="@+id/txtMinuteUsed"
             android:layout_width="match_parent"
             android:layout_height="wrap_content" />
     </com.google.android.material.textfield.TextInputLayout>
@@ -134,7 +170,7 @@
         android:hint="Bill Amount"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/txtlayoutGBUsed">
+        app:layout_constraintTop_toBottomOf="@id/txtlayoutMinUsed">
 
         <com.google.android.material.textfield.TextInputEditText
             android:id="@+id/txtBillAmount"
