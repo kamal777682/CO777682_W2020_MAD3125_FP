@@ -4,6 +4,7 @@ import android.content.Intent;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
+import android.widget.TextView;
 import android.widget.Toast;
 
 import androidx.annotation.NonNull;
@@ -12,6 +13,7 @@ import androidx.recyclerview.widget.RecyclerView;
 import com.google.android.material.textfield.TextInputEditText;
 import com.kamal.co777682_w2020_mad3125_fp.Models.Customers;
 import com.kamal.co777682_w2020_mad3125_fp.R;
+import com.kamal.co777682_w2020_mad3125_fp.UI.BillSummaryActivity;
 import com.kamal.co777682_w2020_mad3125_fp.UI.ShowBillDetailsActivity;
 
 import java.util.ArrayList;
@@ -19,7 +21,7 @@ import java.util.ArrayList;
 public class CustomerListAdapter extends  RecyclerView.Adapter<CustomerListAdapter.CustomersViewHolder>
 {
 
-    private final ArrayList<Customers> customerArrayList;
+    private  ArrayList<Customers> customerArrayList;
     public CustomerListAdapter(ArrayList<Customers> customerArrayList)
     {
         this.customerArrayList = customerArrayList;
@@ -38,19 +40,17 @@ public class CustomerListAdapter extends  RecyclerView.Adapter<CustomerListAdapt
     public void onBindViewHolder(@NonNull final CustomersViewHolder holder, final int position) {
         Customers mCustomers = this.customerArrayList.get(position);
         holder.txtName.setText(mCustomers.getFullName());
+
         holder.itemView.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                Customers mCustomers = customerArrayList.get(position);
+               Customers mCustomers = customerArrayList.get(position);
                 Toast.makeText(holder.itemView.getContext(), mCustomers.getFullName(),Toast.LENGTH_SHORT).show();
                 Intent mIntent= new Intent(holder.itemView.getContext(), ShowBillDetailsActivity.class);
-                mIntent.putExtra("CustomersObj",mCustomers);
+                mIntent.putExtra("customerSelected",position);
                 holder.itemView.getContext().startActivity(mIntent);
-
             }
         });
-
-
     }
 
     @Override
@@ -59,7 +59,8 @@ public class CustomerListAdapter extends  RecyclerView.Adapter<CustomerListAdapt
     }
 
     public class CustomersViewHolder extends RecyclerView.ViewHolder {
-        TextInputEditText txtName;
+        TextView txtName;
+        TextView textBill;
         public CustomersViewHolder(@NonNull View itemView) {
             super(itemView);
 

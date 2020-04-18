@@ -56,7 +56,7 @@ public class DataStorage {
         c2.addBill(h2.getBillId(),h2);
         c2.addBill(i2.getBillId(),i2);
         c3.addBill(i3.getBillId(),i3);
-
+        c1.getBills();
     }
 }
 
