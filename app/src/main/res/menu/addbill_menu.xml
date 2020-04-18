@@ -1,0 +1,17 @@
+<?xml version="1.0" encoding="utf-8"?>
+<menu xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:android="http://schemas.android.com/apk/res/android">
+
+    <item
+        android:id="@+id/add_hydro"
+        android:title="Add Hydro Bill" />
+    <item
+        android:id="@+id/add_internet"
+        android:title="Add Internet Bill" />
+    <item
+        android:id="@+id/add_mobile"
+        android:title="Add Mobile Bill" />
+    <item
+        android:id="@+id/logout"
+        android:title="Logout" />
+</menu>

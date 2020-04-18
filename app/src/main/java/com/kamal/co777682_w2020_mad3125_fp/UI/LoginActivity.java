@@ -13,6 +13,7 @@ import android.widget.Button;
 import android.widget.CheckBox;
 
 import com.google.android.material.textfield.TextInputEditText;
+import com.kamal.co777682_w2020_mad3125_fp.DataStorage;
 import com.kamal.co777682_w2020_mad3125_fp.R;
 
 public class LoginActivity extends AppCompatActivity {
@@ -24,10 +25,12 @@ public class LoginActivity extends AppCompatActivity {
     private SharedPreferences myPref;
     @Override
     protected void onCreate(Bundle savedInstanceState) {
+        DataStorage.getInstance().loadCustomerDetails();
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_login);
         ActionBar actionBar = getSupportActionBar();
         actionBar.setTitle(" Log In");
+
         email = findViewById(R.id.txtemail);
         password = findViewById(R.id.txtpassword);//stackoverflow.com/questions/3685790/how-to-switch-between-hide-and-view-password
         btnlogin = findViewById(R.id.login);
