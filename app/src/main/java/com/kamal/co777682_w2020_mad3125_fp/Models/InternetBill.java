@@ -6,7 +6,7 @@ public class InternetBill extends Bill {
 
     public InternetBill(String billId, String billDate, Double totalBillAmount, String internetProvider,int internetGBUsed)
     {
-        super(billId, billDate, totalBillAmount);
+        super(billId, billDate,"Internet", totalBillAmount);
         this.internetProvider = internetProvider;
         this.internetGBUsed = internetGBUsed;
     }

@@ -41,7 +41,6 @@ public class CustomerListActivity extends AppCompatActivity {
         }
         private void displayCustomers()
         {
-            DataStorage.getInstance().loadCustomerDetails();
             customers = new ArrayList<>(DataStorage.getInstance().getCustomers());
         }
 

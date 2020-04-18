@@ -10,7 +10,7 @@
         android:supportsRtl="true"
         android:theme="@style/AppTheme">
         <activity android:name=".UI.AddNewCustomerActivity"></activity>
-        <activity android:name=".UI.ShowBillDetailsActivity" />
+        <activity android:name=".UI.ShowBillDetailsActivity" android:parentActivityName=".UI.CustomerListActivity" />
         <activity android:name=".UI.AddMobileBillActivity" />
         <activity android:name=".UI.AddInternetBillActivity" />
         <activity android:name=".UI.AddHydroBillActivity" />

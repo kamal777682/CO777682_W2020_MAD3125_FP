@@ -9,7 +9,7 @@ public class MobileBill extends Bill{
 
     public MobileBill(String billId, String billDate,Double totalBillAmount, String manufacturerName,
                       String mobilePlan, String mobileNumber, int internetGBUsed, int minuteUsed) {
-        super(billId, billDate, totalBillAmount);
+        super(billId, billDate,"Mobile", totalBillAmount);
         this.manufacturerName = manufacturerName;
         this.mobilePlan = mobilePlan;
         this.mobileNumber = mobileNumber;

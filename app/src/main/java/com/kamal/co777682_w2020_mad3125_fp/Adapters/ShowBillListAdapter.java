@@ -4,6 +4,7 @@ import android.content.Intent;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
+import android.widget.TextView;
 import android.widget.Toast;
 
 import androidx.annotation.NonNull;
@@ -19,8 +20,8 @@ import java.util.ArrayList;
 
 public class ShowBillListAdapter extends  RecyclerView.Adapter<ShowBillListAdapter.ShowBillViewHolder>
 {
-    private final ArrayList<Customers> billArrayList;
-    public ShowBillListAdapter(ArrayList<Customers> billArrayList)
+    private final ArrayList<Bill> billArrayList;
+    public ShowBillListAdapter(ArrayList<Bill> billArrayList)
     {
         this.billArrayList = billArrayList;
     }
@@ -29,21 +30,23 @@ public class ShowBillListAdapter extends  RecyclerView.Adapter<ShowBillListAdapt
     @NonNull
     @Override
     public ShowBillListAdapter.ShowBillViewHolder onCreateViewHolder(@NonNull ViewGroup parent, int viewType) {
-        View mView = LayoutInflater.from(parent.getContext()).inflate(R.layout.customer_list,parent,false);
-        ShowBillListAdapter.ShowBillViewHolder showBillViewHolder = new ShowBillListAdapter.ShowBillViewHolder(mView);
+        View mView = LayoutInflater.from(parent.getContext()).inflate(R.layout.bill_details,parent,false);
+        ShowBillViewHolder showBillViewHolder = new ShowBillViewHolder(mView);
         return showBillViewHolder;
     }
 
     @Override
     public void onBindViewHolder(@NonNull final ShowBillViewHolder holder, final int position) {
-        Customers mCustomers = this.billArrayList.get(position);
-        holder.txtName.setText(mCustomers.getFullName());
+        Bill mbill = this.billArrayList.get(position);
+        holder.billType.setText(mbill.getBillType());
+        holder.billDate.setText(mbill.getBillDate());
         holder.itemView.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                Customers mCustomers = billArrayList.get(position);
-                Toast.makeText(holder.itemView.getContext(), mCustomers.getFullName(),Toast.LENGTH_SHORT).show();
-                Intent mIntent= new Intent(holder.itemView.getContext(), ShowBillDetailsActivity.class);holder.itemView.getContext().startActivity(mIntent.putExtra("CustomersObj",mCustomers));
+                Bill mbill = billArrayList.get(position);
+                Toast.makeText(holder.itemView.getContext(), mbill.getBillId(),Toast.LENGTH_SHORT).show();
+                Intent mIntent= new Intent(holder.itemView.getContext(), ShowBillDetailsActivity.class);
+                holder.itemView.getContext().startActivity(mIntent.putExtra("billObj",mbill));
 
             }
         });
@@ -54,10 +57,14 @@ public class ShowBillListAdapter extends  RecyclerView.Adapter<ShowBillListAdapt
     }
 
     public class ShowBillViewHolder extends RecyclerView.ViewHolder {
-        TextInputEditText txtName;
+        TextView billType;
+        TextView billDate;
 
         public ShowBillViewHolder(@NonNull View itemView) {
             super(itemView);
+            billType = itemView.findViewById(R.id.textView);
+
+            billDate = itemView.findViewById(R.id.textView2);
         }
     }
 
