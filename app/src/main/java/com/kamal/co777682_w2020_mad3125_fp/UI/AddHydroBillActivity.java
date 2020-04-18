@@ -3,13 +3,18 @@ package com.kamal.co777682_w2020_mad3125_fp.UI;
 import androidx.appcompat.app.ActionBar;
 import androidx.appcompat.app.AppCompatActivity;
 
+import android.app.DatePickerDialog;
 import android.os.Bundle;
+import android.view.View;
 import android.widget.Button;
+import android.widget.DatePicker;
 
 import com.google.android.material.textfield.TextInputEditText;
 import com.kamal.co777682_w2020_mad3125_fp.R;
 
-public class AddHydroBillActivity extends AppCompatActivity {
+import java.util.Calendar;
+
+public class AddHydroBillActivity extends AppCompatActivity implements DatePickerDialog.OnDateSetListener {
 
     private TextInputEditText billId;
     private TextInputEditText billDate;
@@ -35,5 +40,31 @@ public class AddHydroBillActivity extends AppCompatActivity {
         billAmount = findViewById(R.id.txtBillAmount);
         btnSave = findViewById(R.id.btnSave);
         btnCancel= findViewById(R.id.btnCancel);
+        findViewById(R.id.btnDatePicker).setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                showDatePickerDialog();
+            }
+        });
+    }
+    private void showDatePickerDialog(){
+        DatePickerDialog datePickerDialog = new DatePickerDialog(
+                this, this,
+                Calendar.getInstance().get(Calendar.DAY_OF_MONTH),
+                Calendar.getInstance().get(Calendar.WEEK_OF_MONTH),
+                Calendar.getInstance().get(Calendar.YEAR));
+        datePickerDialog.show();
+    }
+
+
+    @Override
+    public void onDateSet(DatePicker view, int year, int month, int dayOfMonth) {
+        String date =  dayOfMonth + "/" + month+1 + "/" + year;
+        billDate.setText(date);
+    }
+
+    @Override
+    public void onPointerCaptureChanged(boolean hasCapture) {
+
     }
 }
