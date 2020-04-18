@@ -44,7 +44,11 @@
         <com.google.android.material.textfield.TextInputEditText
             android:id="@+id/txtBillDate"
             android:layout_width="match_parent"
-            android:layout_height="wrap_content" />
+            android:layout_height="wrap_content"
+            android:keepScreenOn="false"
+            android:inputType="none"
+            android:textIsSelectable="true"
+            android:focusable="false" />
 
     </com.google.android.material.textfield.TextInputLayout>
 
