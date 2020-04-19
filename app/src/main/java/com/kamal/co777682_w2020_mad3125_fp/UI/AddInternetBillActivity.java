@@ -60,6 +60,5 @@ public class AddInternetBillActivity extends AppCompatActivity implements DatePi
         String date =  dayOfMonth + "/" + month+1 + "/" + year;
         billDate.setText(date);
     }
-
 }
 
