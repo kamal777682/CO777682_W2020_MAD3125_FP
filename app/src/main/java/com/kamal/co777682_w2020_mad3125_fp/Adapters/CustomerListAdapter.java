@@ -45,7 +45,7 @@ public class CustomerListAdapter extends  RecyclerView.Adapter<CustomerListAdapt
                Customers mCustomers = customerArrayList.get(position);
                 Toast.makeText(holder.itemView.getContext(), mCustomers.getFullName(),Toast.LENGTH_SHORT).show();
                 Intent mIntent= new Intent(holder.itemView.getContext(), ShowBillDetailsActivity.class);
-                mIntent.putExtra("CustomerObj",position);
+                mIntent.putExtra("CustomerObj",mCustomers);
                 holder.itemView.getContext().startActivity(mIntent);
             }
         });

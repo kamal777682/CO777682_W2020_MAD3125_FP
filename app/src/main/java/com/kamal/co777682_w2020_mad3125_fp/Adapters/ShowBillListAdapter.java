@@ -23,25 +23,29 @@ import java.util.ArrayList;
 public class ShowBillListAdapter extends  RecyclerView.Adapter<ShowBillListAdapter.ShowBillViewHolder> {
     private ArrayList<Bill> billArrayList;
 
+    public ShowBillListAdapter(ArrayList<Bill> billArrayList) {
+        this.billArrayList = billArrayList;
+    }
+
     @NonNull
     @Override
     public ShowBillListAdapter.ShowBillViewHolder onCreateViewHolder(@NonNull ViewGroup parent, int viewType) {
-        View mView = LayoutInflater.from(parent.getContext()).inflate(R.layout.customer_list,parent,false);
+        View mView = LayoutInflater.from(parent.getContext()).inflate(R.layout.bill_details,parent,false);
         ShowBillViewHolder showBillViewHolder=  new ShowBillViewHolder(mView);
         return showBillViewHolder;
     }
 
     @Override
     public void onBindViewHolder(@NonNull final ShowBillListAdapter.ShowBillViewHolder holder, final int position) {
-        Bill mbill= this.billArrayList.get(position);
-        holder.billType.setText(mbill.getBillType());
-        holder.billDate.setText(mbill.getBillDate());
+        final Bill mbill= this.billArrayList.get(position);
+       holder.billType.setText(mbill.getBillType());
+       holder.billDate.setText(mbill.getBillDate());
 
         holder.itemView.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
                 Intent mIntent= new Intent(holder.itemView.getContext(), ShowBillDetailsActivity.class);
-                mIntent.putExtra("BillObj",position);
+                mIntent.putExtra("BillObj",mbill);
                 holder.itemView.getContext().startActivity(mIntent);
             }
         });
@@ -56,8 +60,8 @@ public class ShowBillListAdapter extends  RecyclerView.Adapter<ShowBillListAdapt
         TextView billType;
         public ShowBillViewHolder(@NonNull View itemView) {
             super(itemView);
-            billType = itemView.findViewById(R.id.txtBillType);
-            billDate = itemView.findViewById(R.id.txtBillDate);
+            billType = itemView.findViewById(R.id.textView);
+            billDate = itemView.findViewById(R.id.textView2);
         }
     }
 }
