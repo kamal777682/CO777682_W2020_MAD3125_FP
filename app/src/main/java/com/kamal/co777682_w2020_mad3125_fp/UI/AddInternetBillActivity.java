@@ -6,13 +6,24 @@ import androidx.appcompat.app.AppCompatActivity;
 import android.app.DatePickerDialog;
 import android.os.Bundle;
 import android.view.View;
+import android.widget.Button;
 import android.widget.DatePicker;
 
+import com.google.android.material.textfield.TextInputEditText;
 import com.kamal.co777682_w2020_mad3125_fp.R;
 
 import java.util.Calendar;
 
-public class AddInternetBillActivity extends AppCompatActivity {
+public class AddInternetBillActivity extends AppCompatActivity implements DatePickerDialog.OnDateSetListener {
+    private TextInputEditText billId;
+    private TextInputEditText billDate;
+    private TextInputEditText billType;
+    private TextInputEditText internetProvider;
+    private TextInputEditText internetGBUsed;
+    private TextInputEditText billAmount;
+    private Button btnSave;
+    private Button btnCancel;
+
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -20,6 +31,13 @@ public class AddInternetBillActivity extends AppCompatActivity {
         setContentView(R.layout.activity_add_internet_bill);
         ActionBar actionBar = getSupportActionBar();
         actionBar.setTitle("Add Internet Bill");
+        billId = findViewById(R.id.txtBillID);
+        billDate = findViewById(R.id.txtBillDate);
+        billType = findViewById(R.id.txtBillType);
+        internetProvider = findViewById(R.id.txtInternetProvider);
+        internetGBUsed = findViewById(R.id.txtGBUsed);
+        btnSave = findViewById(R.id.btnSave);
+        btnCancel = findViewById(R.id.btnCancel);
         findViewById(R.id.btnDatePicker).setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
@@ -44,4 +62,4 @@ public class AddInternetBillActivity extends AppCompatActivity {
     }
 
 }
-}
+
