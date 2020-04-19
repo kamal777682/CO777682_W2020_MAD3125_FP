@@ -26,8 +26,6 @@ public class CustomerListAdapter extends  RecyclerView.Adapter<CustomerListAdapt
     {
         this.customerArrayList = customerArrayList;
     }
-
-
     @NonNull
     @Override
     public CustomersViewHolder onCreateViewHolder(@NonNull ViewGroup parent, int viewType) {
@@ -47,7 +45,7 @@ public class CustomerListAdapter extends  RecyclerView.Adapter<CustomerListAdapt
                Customers mCustomers = customerArrayList.get(position);
                 Toast.makeText(holder.itemView.getContext(), mCustomers.getFullName(),Toast.LENGTH_SHORT).show();
                 Intent mIntent= new Intent(holder.itemView.getContext(), ShowBillDetailsActivity.class);
-                mIntent.putExtra("customerSelected",position);
+                mIntent.putExtra("CustomerObj",position);
                 holder.itemView.getContext().startActivity(mIntent);
             }
         });
@@ -60,7 +58,7 @@ public class CustomerListAdapter extends  RecyclerView.Adapter<CustomerListAdapt
 
     public class CustomersViewHolder extends RecyclerView.ViewHolder {
         TextView txtName;
-        TextView textBill;
+
         public CustomersViewHolder(@NonNull View itemView) {
             super(itemView);
 

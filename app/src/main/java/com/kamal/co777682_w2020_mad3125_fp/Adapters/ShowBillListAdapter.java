@@ -17,56 +17,48 @@ import com.kamal.co777682_w2020_mad3125_fp.R;
 import com.kamal.co777682_w2020_mad3125_fp.UI.BillSummaryActivity;
 import com.kamal.co777682_w2020_mad3125_fp.UI.ShowBillDetailsActivity;
 
+import java.nio.DoubleBuffer;
 import java.util.ArrayList;
 
-public class ShowBillListAdapter extends  RecyclerView.Adapter<ShowBillListAdapter.ShowBillViewHolder>
-{
-   private final ArrayList<Bill> billArrayList;
-    public ShowBillListAdapter(ArrayList<Bill> billArrayList)
-    {
-        this.billArrayList = billArrayList;
-    }
-
+public class ShowBillListAdapter extends  RecyclerView.Adapter<ShowBillListAdapter.ShowBillViewHolder> {
+    private ArrayList<Bill> billArrayList;
 
     @NonNull
     @Override
     public ShowBillListAdapter.ShowBillViewHolder onCreateViewHolder(@NonNull ViewGroup parent, int viewType) {
-        View view = LayoutInflater.from(parent.getContext()).inflate(R.layout.bill_details,parent,false);
-        ShowBillViewHolder showBillViewHolder = new ShowBillViewHolder(view);
+        View mView = LayoutInflater.from(parent.getContext()).inflate(R.layout.customer_list,parent,false);
+        ShowBillViewHolder showBillViewHolder=  new ShowBillViewHolder(mView);
         return showBillViewHolder;
     }
 
     @Override
-    public void onBindViewHolder(@NonNull final ShowBillViewHolder holder, final int position) {
-        Bill mbill = this.billArrayList.get(position);
+    public void onBindViewHolder(@NonNull final ShowBillListAdapter.ShowBillViewHolder holder, final int position) {
+        Bill mbill= this.billArrayList.get(position);
         holder.billType.setText(mbill.getBillType());
         holder.billDate.setText(mbill.getBillDate());
+
         holder.itemView.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                Bill mbill = billArrayList.get(position);
-               // Toast.makeText(holder.itemView.getContext(), mbill.getBillId(),Toast.LENGTH_SHORT).show();
-                Intent mIntent= new Intent(holder.itemView.getContext(), BillSummaryActivity.class);
-                holder.itemView.getContext().startActivity(mIntent.putExtra("billObj",mbill));
+                Intent mIntent= new Intent(holder.itemView.getContext(), ShowBillDetailsActivity.class);
+                mIntent.putExtra("BillObj",position);
+                holder.itemView.getContext().startActivity(mIntent);
             }
         });
-
     }
+
+    @Override
     public int getItemCount() {
         return this.billArrayList.size();
     }
-
     public class ShowBillViewHolder extends RecyclerView.ViewHolder {
-        TextView billType;
         TextView billDate;
-
+        TextView billType;
         public ShowBillViewHolder(@NonNull View itemView) {
             super(itemView);
-            billType = itemView.findViewById(R.id.textView);
-            billDate = itemView.findViewById(R.id.textView2);
+            billType = itemView.findViewById(R.id.txtBillType);
+            billDate = itemView.findViewById(R.id.txtBillDate);
         }
     }
-
-
 }
 
