@@ -17,7 +17,6 @@ public class BillSummaryActivity extends AppCompatActivity {
     private TextView billAmount;
     private TextView agencyName;
     private TextView unitConsumed;
-    private TextView internetProvider;
     private TextView internetUsage;
     private TextView manufactureName;
     private TextView mobilePlan;
@@ -34,6 +33,13 @@ public class BillSummaryActivity extends AppCompatActivity {
         ab.setTitle("         Bill Details      ");
 
         Bill tempObj = (Bill) getIntent().getSerializableExtra("billObj");
+
+        billId = findViewById(R.id.textView23);
+        billType = findViewById(R.id.textView24);
+        billDate = findViewById(R.id.textView25);
+        billAmount = findViewById(R.id.textView26);
+
+
 
     }
 }
