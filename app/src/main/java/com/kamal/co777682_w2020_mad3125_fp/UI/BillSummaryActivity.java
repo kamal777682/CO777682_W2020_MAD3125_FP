@@ -6,12 +6,13 @@ import androidx.appcompat.app.AppCompatActivity;
 import android.os.Bundle;
 import android.widget.TextView;
 
+import com.kamal.co777682_w2020_mad3125_fp.Models.Bill;
 import com.kamal.co777682_w2020_mad3125_fp.R;
 
 public class BillSummaryActivity extends AppCompatActivity {
 
     private TextView billId;
-    private  TextView billDate;
+    private TextView billDate;
     private TextView billType;
     private TextView billAmount;
     private TextView agencyName;
@@ -23,6 +24,7 @@ public class BillSummaryActivity extends AppCompatActivity {
     private TextView mobileNumber;
     private TextView mobileInternetused;
     private TextView minuteUsed;
+
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -30,5 +32,8 @@ public class BillSummaryActivity extends AppCompatActivity {
 
         ActionBar ab = getSupportActionBar();
         ab.setTitle("         Bill Details      ");
+
+        Bill tempObj = (Bill) getIntent().getSerializableExtra("billObj");
+
     }
 }
