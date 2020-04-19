@@ -37,33 +37,5 @@ public class AddNewCustomerActivity extends AppCompatActivity {
         btnSave = findViewById(R.id.btnSave);
 
     }
-    @Override
-    public boolean onCreateOptionsMenu(Menu menu) {
-        getMenuInflater().inflate(R.menu.addbill_menu,menu);
-        return true;
-    }
 
-    @Override
-    public boolean onOptionsItemSelected(@NonNull MenuItem item) {
-        switch (item.getItemId()) {
-            case R.id.add_hydro:
-                Intent hIntent = new Intent((AddNewCustomerActivity.this), AddHydroBillActivity.class);
-                startActivity(hIntent);
-                return true;
-            case R.id.add_internet:
-                Intent iIntent = new Intent((AddNewCustomerActivity.this),AddInternetBillActivity.class);
-                startActivity(iIntent);
-                return true;
-            case R.id.add_mobile:
-                Intent mIntent = new Intent((AddNewCustomerActivity.this), AddMobileBillActivity.class);
-                startActivity(mIntent);
-                return true;
-            case R.id.logout:
-                Intent cIntent = new Intent((AddNewCustomerActivity.this), LoginActivity.class);
-                startActivity(cIntent);
-                return true;
-            default:
-                return super.onOptionsItemSelected(item);
-        }
-    }
 }

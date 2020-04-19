@@ -11,7 +11,4 @@
     <item
         android:id="@+id/add_mobile"
         android:title="Add Mobile Bill" />
-    <item
-        android:id="@+id/logout"
-        android:title="Logout" />
 </menu>

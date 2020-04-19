@@ -1,11 +1,15 @@
 package com.kamal.co777682_w2020_mad3125_fp.UI;
+import androidx.annotation.NonNull;
 import androidx.appcompat.app.ActionBar;
 import androidx.appcompat.app.AppCompatActivity;
 import androidx.recyclerview.widget.LinearLayoutManager;
 import androidx.recyclerview.widget.RecyclerView;
 
+import android.content.Intent;
 import android.os.Bundle;
 import android.util.Log;
+import android.view.Menu;
+import android.view.MenuItem;
 import android.widget.TextView;
 import android.widget.Toast;
 
@@ -45,10 +49,11 @@ public class ShowBillDetailsActivity extends AppCompatActivity {
 
        Customers tempObj = (Customers) getIntent().getSerializableExtra("CustomerObj");
 
-        txtCustomerId.setText(tempObj.getCustomerId());
-        txtName.setText(tempObj.getFullName());
-        txtCity.setText(tempObj.getCity());
-        txtEmail.setText(tempObj.getEmail());
+        txtCustomerId.setText("Customer's Id :  " + " " +tempObj.getCustomerId());
+        txtName.setText("Customer's Name : " + " " +tempObj.getFullName());
+        txtCity.setText("Customer's City : "+ " "+tempObj.getCity());
+        txtEmail.setText("Customer's Email : "+ " " + tempObj.getEmail());
+        txtTotalBill.setText("Total BIll To Pay : "+ " "+ tempObj.getTotalBill());
 
         Toast.makeText(this, tempObj.getFullName(), Toast.LENGTH_SHORT).show();
 
@@ -58,6 +63,30 @@ public class ShowBillDetailsActivity extends AppCompatActivity {
         rvbills.setLayoutManager(mLayoutManager);
         rvbills.setAdapter(showBillListAdapter);
     }
+    @Override
+    public boolean onCreateOptionsMenu(Menu menu) {
+        getMenuInflater().inflate(R.menu.addbill_menu,menu);
+        return true;
+    }
 
+    @Override
+    public boolean onOptionsItemSelected(@NonNull MenuItem item) {
+        switch (item.getItemId()) {
+            case R.id.add_hydro:
+                Intent hIntent = new Intent((ShowBillDetailsActivity.this), AddHydroBillActivity.class);
+                startActivity(hIntent);
+                return true;
+            case R.id.add_internet:
+                Intent iIntent = new Intent((ShowBillDetailsActivity.this),AddInternetBillActivity.class);
+                startActivity(iIntent);
+                return true;
+            case R.id.add_mobile:
+                Intent mIntent = new Intent((ShowBillDetailsActivity.this), AddMobileBillActivity.class);
+                startActivity(mIntent);
+                return true;
+            default:
+                return super.onOptionsItemSelected(item);
+        }
+    }
 }
 
