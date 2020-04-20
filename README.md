@@ -10,5 +10,7 @@ REFFERENCES:
 6. https://javatpoint.com/android-option-menu-example
 7. https://developer.android.com/training/appbar/actions
 8. https://developer.android.com/reference/java/util/HashMap
+9. https://stackoverflow.com/questions/3496269/how-do-i-put-a-border-around-an-android-textview 10.https://material.io/develop/android/components/text-fields/ 
+11.https://www.youtube.com/watch?v=AdTzD96AhE0&feature=emb_rel_pause(Date Picker Dialog)
 
              
