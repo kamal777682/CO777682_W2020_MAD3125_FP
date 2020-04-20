@@ -30,6 +30,7 @@ public class BillSummaryActivity extends AppCompatActivity {
     private TextView txtinfo3;
     private TextView txtinfo4;
     private TextView txtinfo5;
+    private  Bill tempObj;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -42,8 +43,7 @@ public class BillSummaryActivity extends AppCompatActivity {
        //  Bill tempObj = (DataStorage.getInstance().getBill()).get(getIntent().getIntExtra("billObj",0));
 
         //   Customers tempObj = (Customers) getIntent().getSerializableExtra("CustomerObj");
-
-        Bill tempObj = (Bill) getIntent().getSerializableExtra("billObj");
+        tempObj = (Bill) getIntent().getSerializableExtra("billObj");
 
         billId = findViewById(R.id.textView23);
         billType = findViewById(R.id.textView24);
@@ -81,7 +81,7 @@ public class BillSummaryActivity extends AppCompatActivity {
             txtinf01.setText(internetBill.getInternetProvider());
 
             txt2.setText("Internet Usage : ");
-            txtinfo2.setText(internetBill.getInternetGBUsed());
+            txtinfo2.setText(internetBill.getInternetGBUsed() + "GB");
         }else if(tempObj.getBillType().contains("Mobile"))
         {
            MobileBill mobileBill = (MobileBill) tempObj;
@@ -100,9 +100,5 @@ public class BillSummaryActivity extends AppCompatActivity {
             txt5.setText(" Minute Used In Talk :");
             txtinfo5.setText(mobileBill.getMinuteUsed());
         }
-
-
-
-
     }
 }

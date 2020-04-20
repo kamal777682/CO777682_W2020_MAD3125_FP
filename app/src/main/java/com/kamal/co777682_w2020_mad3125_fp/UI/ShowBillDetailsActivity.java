@@ -33,7 +33,7 @@ public class ShowBillDetailsActivity extends AppCompatActivity {
     private RecyclerView rvbills;
     private ArrayList<Bill> bills;
     private ShowBillListAdapter showBillListAdapter;
-    public Customers tempObj;
+    private Customers tempObj;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
