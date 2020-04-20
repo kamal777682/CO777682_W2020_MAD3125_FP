@@ -68,10 +68,10 @@ public class AddInternetBillActivity extends AppCompatActivity implements DatePi
                 }
                 else
                 {
-                    InternetBill internetBill = new InternetBill(billid,billdate,Double.parseDouble(billamount),intP, Integer.parseInt(usage));
-                    cust.addBill(internetBill.getBillId(), internetBill);
-                    Intent intent = new Intent(AddInternetBillActivity.this,ShowBillDetailsActivity.class);
-                    startActivity(intent);
+                 //   InternetBill internetBill = new InternetBill(billid,billdate,Double.parseDouble(billamount),intP, Integer.parseInt(usage));
+                   // cust.addBill(internetBill.getBillId(), internetBill);
+                    //Intent intent = new Intent(AddInternetBillActivity.this,ShowBillDetailsActivity.class);
+                    //startActivity(intent);
                 }
             }
         });
