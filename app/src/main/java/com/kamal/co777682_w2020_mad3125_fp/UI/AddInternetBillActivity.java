@@ -25,8 +25,6 @@ public class AddInternetBillActivity extends AppCompatActivity implements DatePi
     private TextInputEditText internetGBUsed;
     private TextInputEditText billAmount;
     private Button btnSave;
-    private Button btnCancel;
-
     public  static  Customers cust;
 
     @Override
@@ -37,6 +35,7 @@ public class AddInternetBillActivity extends AppCompatActivity implements DatePi
         actionBar.setTitle("Add Internet Bill");
         billId = findViewById(R.id.txtBillID);
         billDate = findViewById(R.id.txtBillDate);
+        billAmount = findViewById(R.id.txtBillAmount);
         internetProvider = findViewById(R.id.txtInternetProvider);
         internetGBUsed = findViewById(R.id.txtGBUsed);
         btnSave = findViewById(R.id.btnSave);
@@ -68,10 +67,10 @@ public class AddInternetBillActivity extends AppCompatActivity implements DatePi
                 }
                 else
                 {
-                 //   InternetBill internetBill = new InternetBill(billid,billdate,Double.parseDouble(billamount),intP, Integer.parseInt(usage));
-                   // cust.addBill(internetBill.getBillId(), internetBill);
-                    //Intent intent = new Intent(AddInternetBillActivity.this,ShowBillDetailsActivity.class);
-                    //startActivity(intent);
+                    InternetBill internetBill = new InternetBill(billid,billdate,Double.parseDouble(billamount),intP, Integer.parseInt(usage));
+                  cust.addBill(internetBill.getBillId(), internetBill);
+                 Intent intent = new Intent(AddInternetBillActivity.this,ShowBillDetailsActivity.class);
+                 startActivity(intent);
                 }
             }
         });

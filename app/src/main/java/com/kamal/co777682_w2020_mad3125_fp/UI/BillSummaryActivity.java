@@ -10,6 +10,7 @@ import com.kamal.co777682_w2020_mad3125_fp.Models.Bill;
 import com.kamal.co777682_w2020_mad3125_fp.Models.Customers;
 import com.kamal.co777682_w2020_mad3125_fp.Models.HydroBill;
 import com.kamal.co777682_w2020_mad3125_fp.Models.InternetBill;
+import com.kamal.co777682_w2020_mad3125_fp.Models.MobileBill;
 import com.kamal.co777682_w2020_mad3125_fp.R;
 
 public class BillSummaryActivity extends AppCompatActivity {
@@ -74,11 +75,29 @@ public class BillSummaryActivity extends AppCompatActivity {
         if(tempObj.getBillType().contains("Internet"))
         {
             InternetBill internetBill = (InternetBill) tempObj;
-            txt1.setText("Provider Name");
+            txt1.setText("Provider Name: ");
             txtinf01.setText(internetBill.getInternetProvider());
 
-            txt2.setText("Internet Usage");
+            txt2.setText("Internet Usage : ");
             txtinfo2.setText(internetBill.getInternetGBUsed());
+        }
+        if(tempObj.getBillType().contains("Mobile"))
+        {
+           MobileBill mobileBill = (MobileBill) tempObj;
+            txt1.setText("Manufacturer Name : ");
+            txtinf01.setText(mobileBill.getManufacturerName());
+
+            txt2.setText("Mobile Plan : ");
+            txtinfo2.setText(mobileBill.getMobilePlan());
+
+            txt3.setText("Mobile Number : ");
+            txtinfo3.setText(mobileBill.getMobileNumber());
+
+            txt4.setText("Internet Used(GB) : ");
+            txtinfo4.setText(mobileBill.getInternetGBUsed());
+
+            txt5.setText(" Minute Used In Talk :");
+            txtinfo5.setText(mobileBill.getMinuteUsed());
         }
 
 

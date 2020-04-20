@@ -80,7 +80,7 @@ public class ShowBillDetailsActivity extends AppCompatActivity {
                 startActivity(hIntent);
                 return true;
             case R.id.add_internet:
-               // AddInternetBillActivity.cust = tempObj;
+                AddInternetBillActivity.cust = tempObj;
                 Intent iIntent = new Intent((ShowBillDetailsActivity.this),AddInternetBillActivity.class);
                 startActivity(iIntent);
                 return true;
