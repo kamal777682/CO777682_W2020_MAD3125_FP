@@ -5,6 +5,8 @@ import androidx.annotation.NonNull;
 import androidx.appcompat.app.ActionBar;
 import androidx.appcompat.app.AppCompatActivity;
 
+import android.app.AlertDialog;
+import android.content.DialogInterface;
 import android.content.Intent;
 import android.os.Bundle;
 import android.view.Menu;
@@ -73,6 +75,25 @@ public class AddNewCustomerActivity extends AppCompatActivity {
                     mIntent.putExtra("CRACustomerObj", tempObj);
                     startActivity(mIntent);
                 }else {
+
+                    AlertDialog.Builder alert = new AlertDialog.Builder(AddNewCustomerActivity.this);
+                    alert.setCancelable(false);
+                    alert.setTitle("Error");
+                    alert.setMessage("Invalid Details");
+                    alert.setPositiveButton("OK", new DialogInterface.OnClickListener() {
+                        @Override
+                        public void onClick(DialogInterface dialog, int n) {
+                            dialog.dismiss();
+                        }
+                    });
+                    alert.setNegativeButton("Cancel", new DialogInterface.OnClickListener() {
+                        @Override
+                        public void onClick(DialogInterface dialog, int n) {
+                            dialog.cancel();
+                        }
+                    });
+                    AlertDialog alertDialog = alert.create();
+                    alertDialog.show();
                 }
                 }
         });
