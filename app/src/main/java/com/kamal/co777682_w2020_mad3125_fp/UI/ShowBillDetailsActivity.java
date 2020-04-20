@@ -16,6 +16,7 @@ import android.widget.Toast;
 import com.google.android.material.textfield.TextInputEditText;
 import com.kamal.co777682_w2020_mad3125_fp.Adapters.ShowBillListAdapter;
 import com.kamal.co777682_w2020_mad3125_fp.Adapters.ShowBillListAdapter;
+import com.kamal.co777682_w2020_mad3125_fp.DataStorage;
 import com.kamal.co777682_w2020_mad3125_fp.Models.Bill;
 import com.kamal.co777682_w2020_mad3125_fp.Models.Customers;
 import com.kamal.co777682_w2020_mad3125_fp.R;
@@ -48,7 +49,7 @@ public class ShowBillDetailsActivity extends AppCompatActivity {
         txtTotalBill = findViewById(R.id.textView7);
         rvbills = findViewById(R.id.rvbills);
 
-        tempObj = (Customers) getIntent().getSerializableExtra("CustomerObj");
+        tempObj = (DataStorage.getInstance().getCustomers()).get(getIntent().getIntExtra("CustomerObj",0));
 
         txtCustomerId.setText("Customer's Id :  " + " " +tempObj.getCustomerId());
         txtName.setText("Customer's Name : " + " " +tempObj.getFullName());
@@ -74,9 +75,9 @@ public class ShowBillDetailsActivity extends AppCompatActivity {
     public boolean onOptionsItemSelected(@NonNull MenuItem item) {
         switch (item.getItemId()) {
             case R.id.add_hydro:
-                AddHydroBillActivity.customer1 = tempObj;
+                AddHydroBillActivity.cust = tempObj;
                 Intent hIntent = new Intent((ShowBillDetailsActivity.this), AddHydroBillActivity.class);
-                hIntent.putExtra("customer1",tempObj);
+                //hIntent.putExtra("customer1",tempObj);
                 startActivity(hIntent);
                 return true;
             case R.id.add_internet:

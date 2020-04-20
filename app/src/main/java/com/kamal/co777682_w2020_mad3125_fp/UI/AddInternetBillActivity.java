@@ -26,7 +26,7 @@ public class AddInternetBillActivity extends AppCompatActivity implements DatePi
     private TextInputEditText billAmount;
     private Button btnSave;
     private Button btnCancel;
-    public  static   Customers customer1;
+    public  static   Customers cust;
 
 
     @Override
@@ -69,7 +69,7 @@ public class AddInternetBillActivity extends AppCompatActivity implements DatePi
                 else
                 {
                     InternetBill tempInternet = new InternetBill(billid,billdate,Double.parseDouble(billamount),intP, Integer.parseInt(usage));
-                    customer1.addBill(tempInternet.getBillId(), tempInternet);
+                    cust.addBill(tempInternet.getBillId(), tempInternet);
                     Intent intent = new Intent(AddInternetBillActivity.this,ShowBillDetailsActivity.class);
                     startActivity(intent);
                 }
@@ -91,8 +91,6 @@ public class AddInternetBillActivity extends AppCompatActivity implements DatePi
                 Calendar.getInstance().get(Calendar.YEAR));
         datePickerDialog.show();
     }
-
-
     @Override
     public void onDateSet(DatePicker view, int year, int month, int dayOfMonth) {
         String date =  dayOfMonth + "/" + month+1 + "/" + year;

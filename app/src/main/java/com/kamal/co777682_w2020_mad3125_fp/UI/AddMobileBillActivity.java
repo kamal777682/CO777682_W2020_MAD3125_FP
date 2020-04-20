@@ -57,7 +57,7 @@ public class AddMobileBillActivity extends AppCompatActivity implements DatePick
                 String mobP = mobilePlan.getText().toString().trim();
                 String mobN = mobileNumber.getText().toString().trim();
                 String iUsed = internetGBUsed.getText().toString().trim();
-                String mUsed = minuteUsed.getText().toString().trim()''
+                String mUsed = minuteUsed.getText().toString().trim();
                 if(billid.isEmpty())
                 {
                     billId.setError("Enter Bill Id");
@@ -92,13 +92,13 @@ public class AddMobileBillActivity extends AppCompatActivity implements DatePick
                 else
                 {
                     MobileBill mobileBill = new MobileBill(billid,billdate,Double.parseDouble(billamount),mName,mobP,mobN,Integer.parseInt(iUsed),Integer.parseInt(mUsed));
-                    customer1.addBill(mobileBill.getBillId(), mobileBill);
+                    //customer1.addBill(mobileBill.getBillId(), mobileBill);
                     Intent intent = new Intent(AddMobileBillActivity.this,ShowBillDetailsActivity.class);
                     startActivity(intent);
                 }
             }
         });
-        findViewById(R.id.btnDatePicker).setOnClickListener(new View.OnClickListener() {
+        billDate.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
                 showDatePickerDialog();

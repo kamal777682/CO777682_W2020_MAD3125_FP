@@ -10,12 +10,12 @@
         android:supportsRtl="true"
         android:theme="@style/AppTheme">
         <activity android:name=".UI.BillSummaryActivity"></activity>
-        <activity android:name=".UI.AddNewCustomerActivity" />
+        <activity android:name=".UI.AddNewCustomerActivity" android:parentActivityName=".UI.CustomerListActivity" />
         <activity
             android:name=".UI.ShowBillDetailsActivity"  android:parentActivityName=".UI.CustomerListActivity"/>
-        <activity android:name=".UI.AddMobileBillActivity" android:parentActivityName=".UI.ShowBillDetailsActivity" />
-        <activity android:name=".UI.AddInternetBillActivity" android:parentActivityName=".UI.ShowBillDetailsActivity" />
-        <activity android:name=".UI.AddHydroBillActivity" android:parentActivityName=".UI.ShowBillDetailsActivity"/>
+        <activity android:name=".UI.AddMobileBillActivity" />
+        <activity android:name=".UI.AddInternetBillActivity" />
+        <activity android:name=".UI.AddHydroBillActivity"/>
         <activity android:name=".UI.CustomerListActivity"  />
         <activity
             android:name=".UI.LoginActivity" />
