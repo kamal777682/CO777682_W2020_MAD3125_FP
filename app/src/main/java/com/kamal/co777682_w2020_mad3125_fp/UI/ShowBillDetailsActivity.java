@@ -74,8 +74,9 @@ public class ShowBillDetailsActivity extends AppCompatActivity {
     public boolean onOptionsItemSelected(@NonNull MenuItem item) {
         switch (item.getItemId()) {
             case R.id.add_hydro:
-                AddHydroBillActivity.customer = tempObj;
+                AddHydroBillActivity.customer1 = tempObj;
                 Intent hIntent = new Intent((ShowBillDetailsActivity.this), AddHydroBillActivity.class);
+                hIntent.putExtra("customer1",tempObj);
                 startActivity(hIntent);
                 return true;
             case R.id.add_internet:

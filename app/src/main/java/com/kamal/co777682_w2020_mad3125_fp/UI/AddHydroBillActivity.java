@@ -29,7 +29,7 @@ public class AddHydroBillActivity extends AppCompatActivity implements DatePicke
     private TextInputEditText billAmount;
     private Button btnSave;
     private Button btnCancel;
-        public static Customers customer ;
+        public static Customers customer1 ;
 
 
     @Override
@@ -85,7 +85,7 @@ public class AddHydroBillActivity extends AppCompatActivity implements DatePicke
                 else
                 {
                     HydroBill hydro = new HydroBill(billid,billdate,Double.parseDouble(billamount),agName,Double.parseDouble(Ucons));
-                    customer.addBill(hydro.getBillId(), hydro);
+                    customer1.addBill(hydro.getBillId(), hydro);
                     Intent hintent = new Intent(AddHydroBillActivity.this,ShowBillDetailsActivity.class);
                     startActivity(hintent);
                 }
