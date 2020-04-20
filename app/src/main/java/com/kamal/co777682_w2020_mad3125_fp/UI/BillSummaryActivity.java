@@ -7,6 +7,7 @@ import android.os.Bundle;
 import android.widget.TextView;
 
 import com.kamal.co777682_w2020_mad3125_fp.Models.Bill;
+import com.kamal.co777682_w2020_mad3125_fp.Models.Customers;
 import com.kamal.co777682_w2020_mad3125_fp.R;
 
 public class BillSummaryActivity extends AppCompatActivity {
@@ -32,12 +33,16 @@ public class BillSummaryActivity extends AppCompatActivity {
         ActionBar ab = getSupportActionBar();
         ab.setTitle("         Bill Details      ");
 
-        Bill tempObj = (Bill) getIntent().getSerializableExtra("billObj");
+     //   Customers tempObj = (Customers) getIntent().getSerializableExtra("CustomerObj");
+
+        Bill tempObj = (Bill) getIntent().getSerializableExtra("bills");
 
         billId = findViewById(R.id.textView23);
         billType = findViewById(R.id.textView24);
         billDate = findViewById(R.id.textView25);
         billAmount = findViewById(R.id.textView26);
+
+        billId.setText(tempObj.getBillId());
 
 
 

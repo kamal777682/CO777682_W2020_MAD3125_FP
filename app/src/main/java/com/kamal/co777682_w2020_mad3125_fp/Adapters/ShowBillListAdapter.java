@@ -45,9 +45,10 @@ public class ShowBillListAdapter extends  RecyclerView.Adapter<ShowBillListAdapt
         holder.itemView.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                Intent mIntent= new Intent(holder.itemView.getContext(), BillSummaryActivity.class);
-                mIntent.putExtra("BillObj",mbill);
-                holder.itemView.getContext().startActivity(mIntent);
+                Bill mbill = billArrayList.get(position);
+                Intent bIntent= new Intent(holder.itemView.getContext(), BillSummaryActivity.class);
+                bIntent.putExtra("bills",mbill);
+                holder.itemView.getContext().startActivity(bIntent);
             }
         });
     }

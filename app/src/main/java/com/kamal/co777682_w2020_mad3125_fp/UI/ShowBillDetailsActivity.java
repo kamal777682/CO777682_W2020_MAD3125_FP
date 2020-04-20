@@ -52,7 +52,7 @@ public class ShowBillDetailsActivity extends AppCompatActivity {
         txtCustomerId.setText("Customer's Id :  " + " " +tempObj.getCustomerId());
         txtName.setText("Customer's Name : " + " " +tempObj.getFullName());
         txtCity.setText("Customer's City : "+ " "+tempObj.getCity());
-        txtEmail.setText("Customer's Email : "+ " " + tempObj.getEmail());
+        txtEmail.setText("Email :      "+ " " + tempObj.getEmail());
         txtTotalBill.setText("Total BIll To Pay : "+ " "+ tempObj.getTotalBill());
 
         Toast.makeText(this, tempObj.getFullName(), Toast.LENGTH_SHORT).show();
