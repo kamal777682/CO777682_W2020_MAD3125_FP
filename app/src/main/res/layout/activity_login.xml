@@ -6,7 +6,7 @@
     style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox.Dense"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:background="#DFD6D6"
+    android:background="#EFE9E9"
     tools:context=".UI.LoginActivity">
 
 
