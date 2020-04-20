@@ -9,5 +9,6 @@ REFFERENCES:
 5. https://stackoverflow.com/questions/2154438/how-do-i-implement-a-remember-me-function-in-an-android-activity
 6. https://javatpoint.com/android-option-menu-example
 7. https://developer.android.com/training/appbar/actions
+8. https://developer.android.com/reference/java/util/HashMap
 
              
