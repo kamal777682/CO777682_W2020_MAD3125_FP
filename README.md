@@ -1,5 +1,11 @@
 ### CO777682_W2020_MAD3125_FP
 
+## Billing System
+
+1. Splash Screen added.
+2. Validations are added in login screen and fixed email is used for login.
+3. Singleton class is created tp store data .
+
 REFFERENCES:
 
 1. https://www.tutorialspoint.com/how-to-use-singleton-class-in-android
