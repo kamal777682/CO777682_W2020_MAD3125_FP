@@ -50,6 +50,16 @@ public class AddHydroBillActivity extends AppCompatActivity implements DatePicke
         btnSave.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
+                String billid = billId.getText().toString().trim();
+                String billdate = billDate.getText().toString().trim();
+                String billtype = billType.getText().toString().trim();
+                String billamount = billAmount.getText().toString().trim();
+                String agName = AgencyName.getText().toString().trim();
+                String Ucons = UnitConsumed.getText().toString().trim();
+                if(billid.isEmpty())
+                {
+                    billId.setError("Enter Bill Id");
+                }
             }
         });
     }
