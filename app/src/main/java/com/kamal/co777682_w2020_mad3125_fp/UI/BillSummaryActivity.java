@@ -1,9 +1,13 @@
 package com.kamal.co777682_w2020_mad3125_fp.UI;
 
+import androidx.annotation.NonNull;
 import androidx.appcompat.app.ActionBar;
 import androidx.appcompat.app.AppCompatActivity;
 
+import android.content.Intent;
 import android.os.Bundle;
+import android.view.Menu;
+import android.view.MenuItem;
 import android.widget.TextView;
 
 import com.kamal.co777682_w2020_mad3125_fp.DataStorage;
@@ -30,7 +34,7 @@ public class BillSummaryActivity extends AppCompatActivity {
     private TextView txtinfo3;
     private TextView txtinfo4;
     private TextView txtinfo5;
-    private  Bill tempObj;
+    private Bill tempObj;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -60,10 +64,9 @@ public class BillSummaryActivity extends AppCompatActivity {
         billId.setText(tempObj.getBillId());
         billType.setText(tempObj.getBillType());
         billDate.setText(tempObj.getBillDate());
-        billAmount.setText(" $ "+tempObj.getTotalBillAmount().toString());
+        billAmount.setText(" $ " + tempObj.getTotalBillAmount().toString());
 
-        if(tempObj.getBillType().contains("Hydro"))
-        {
+        if (tempObj.getBillType().contains("Hydro")) {
             ActionBar ab1 = getSupportActionBar();
             ab1.setTitle(" Hydro Bill Details");
 
@@ -73,9 +76,7 @@ public class BillSummaryActivity extends AppCompatActivity {
 
             txt2.setText("Unit Consumed");
             txtinfo2.setText(hydroBill.getUnitConsumed().toString());
-        }
-        else if(tempObj.getBillType().contains("Internet"))
-        {
+        } else if (tempObj.getBillType().contains("Internet")) {
             ActionBar ab1 = getSupportActionBar();
             ab1.setTitle(" Internet Bill Details");
 
@@ -85,8 +86,7 @@ public class BillSummaryActivity extends AppCompatActivity {
 
             txt2.setText("Internet Usage : ");
             txtinfo2.setText(internetBill.getInternetGBUsed() + "GB");
-        }else if(tempObj.getBillType().contains("Mobile"))
-        {
+        } else if (tempObj.getBillType().contains("Mobile")) {
             ActionBar ab1 = getSupportActionBar();
             ab1.setTitle(" Mobile  Bill Details");
 
@@ -101,10 +101,31 @@ public class BillSummaryActivity extends AppCompatActivity {
             txtinfo3.setText(mobileBill.getMobileNumber() + " ");
 
             txt4.setText("Internet Used(GB) : ");
-            txtinfo4.setText(mobileBill.getInternetGBUsed() +  " GB ");
+            txtinfo4.setText(mobileBill.getInternetGBUsed() + " GB ");
 
             txt5.setText("Minute Used In Talk :");
-            txtinfo5.setText(mobileBill.getMinuteUsed()+ " min");
+            txtinfo5.setText(mobileBill.getMinuteUsed() + " min");
         }
+    }
+
+    //https://developer.android.com/training/appbar/actions
+    @Override
+    public boolean onCreateOptionsMenu(Menu menu) {
+        getMenuInflater().inflate(R.menu.logout, menu);
+        return true;
+    }
+
+    @Override
+    public boolean onOptionsItemSelected(@NonNull MenuItem item) {
+        switch (item.getItemId()) {
+            case R.id.logout:
+                Intent hIntent = new Intent((BillSummaryActivity.this), LoginActivity.class);
+                startActivity(hIntent);
+                return true;
+
+            default:
+                return super.onOptionsItemSelected(item);
+        }
+
     }
 }

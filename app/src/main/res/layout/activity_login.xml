@@ -41,8 +41,10 @@
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/txtlayoutemail"
+        app:passwordToggleContentDescription="@string/hide_bottom_view_on_scroll_behavior"
         app:passwordToggleDrawable="@drawable/ic_action_password"
-        app:passwordToggleEnabled="true">
+        app:passwordToggleEnabled="true"
+        app:passwordToggleTintMode="src_in">
 
         <com.google.android.material.textfield.TextInputEditText
             android:id="@+id/txtpassword"

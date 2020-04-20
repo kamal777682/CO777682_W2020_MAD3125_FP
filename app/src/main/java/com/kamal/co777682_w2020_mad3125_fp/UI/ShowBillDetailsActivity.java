@@ -25,6 +25,7 @@ import java.util.ArrayList;
 
 public class ShowBillDetailsActivity extends AppCompatActivity {
 
+    public static Bill cust;
     private TextView txtCustomerId;
     private TextView txtName;
     private TextView txtCity;
