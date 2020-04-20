@@ -64,6 +64,7 @@ public class AddNewCustomerActivity extends AppCompatActivity {
                     email.setError("Please enter the email");
                 }
                 //https://www.regular-expressions.info/email.html
+                //https://stackoverflow.com/questions/43747709/how-to-obtain-a-regular-expression-for-validation-email-address-for-one-domain-o
                 else if (email.getText().toString().matches("[A-Z0-9a-z._%+-]+@[A-Za-z0-9.-]+\\.[A-Za-z]{2,64}"))
                 {
                     Customers tempObj = new Customers(customerId, firstName, lastName, Ccity, Cemail);
