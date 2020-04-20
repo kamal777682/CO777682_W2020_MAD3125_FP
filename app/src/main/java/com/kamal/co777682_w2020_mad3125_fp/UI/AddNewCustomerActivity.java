@@ -15,6 +15,7 @@ import android.view.View;
 import android.widget.Button;
 
 import com.google.android.material.textfield.TextInputEditText;
+import com.kamal.co777682_w2020_mad3125_fp.DataStorage;
 import com.kamal.co777682_w2020_mad3125_fp.Models.Customers;
 import com.kamal.co777682_w2020_mad3125_fp.R;
 
@@ -44,33 +45,29 @@ public class AddNewCustomerActivity extends AppCompatActivity {
             public void onClick(View v) {
                 String customerId = custId.getText().toString().trim();
                 String firstName = fName.getText().toString().trim();
-                String lastName =  lName.getText().toString().trim();
+                String lastName = lName.getText().toString().trim();
                 String Ccity = city.getText().toString().trim();
-                String Cemail= email.getText().toString().trim();
-                if(customerId.isEmpty())
-                {
+                String Cemail = email.getText().toString().trim();
+                if (customerId.isEmpty()) {
                     custId.setError("Please enter the Customer ID");
                 }
-                if(firstName.isEmpty())
-                {
+                if (firstName.isEmpty()) {
                     fName.setError("Please enter the First name");
                 }
-                if(lastName.isEmpty())
-                {
+                if (lastName.isEmpty()) {
                     lName.setError("Please enter the Last name");
                 }
-                if(Ccity.isEmpty())
-                {
+                if (Ccity.isEmpty()) {
                     city.setError("Please enter the City");
                 }
-                if (Cemail.isEmpty() )
-                {
-                    email.setError("Please enter the Gross Income");
+                if (Cemail.isEmpty()) {
+                    email.setError("Please enter the email");
                 }
                 //https://www.regular-expressions.info/email.html
-                else if (email.getText().toString().matches("\\b[A-Z0-9._%+-]+@[A-Z0-9.-]+\\.[A-Z]{2,}\\b"))
+                else if (email.getText().toString().matches("[A-Z0-9a-z._%+-]+@[A-Za-z0-9.-]+\\.[A-Za-z]{2,64}"))
                 {
-                    Customers tempObj = new Customers(customerId,firstName,lastName,Ccity,Cemail);
+                    Customers tempObj = new Customers(customerId, firstName, lastName, Ccity, Cemail);
+                    DataStorage.getInstance().customers.add(tempObj);
                     Intent mIntent = new Intent(AddNewCustomerActivity.this, CustomerListActivity.class);
                     mIntent.putExtra("CRACustomerObj", tempObj);
                     startActivity(mIntent);
@@ -78,7 +75,7 @@ public class AddNewCustomerActivity extends AppCompatActivity {
 
                     AlertDialog.Builder alert = new AlertDialog.Builder(AddNewCustomerActivity.this);
                     alert.setCancelable(false);
-                    alert.setTitle("Error");
+                    alert.setTitle(" Error");
                     alert.setMessage("Invalid Details");
                     alert.setPositiveButton("OK", new DialogInterface.OnClickListener() {
                         @Override
@@ -95,9 +92,8 @@ public class AddNewCustomerActivity extends AppCompatActivity {
                     AlertDialog alertDialog = alert.create();
                     alertDialog.show();
                 }
-                }
+            }
         });
-
     }
 
 }

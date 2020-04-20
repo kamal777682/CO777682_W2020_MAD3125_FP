@@ -12,15 +12,13 @@
         <activity android:name=".UI.BillSummaryActivity"></activity>
         <activity android:name=".UI.AddNewCustomerActivity" />
         <activity
-            android:name=".UI.ShowBillDetailsActivity"
-            android:parentActivityName=".UI.CustomerListActivity" />
+            android:name=".UI.ShowBillDetailsActivity" />
         <activity android:name=".UI.AddMobileBillActivity" />
         <activity android:name=".UI.AddInternetBillActivity" />
         <activity android:name=".UI.AddHydroBillActivity" />
         <activity android:name=".UI.CustomerListActivity" />
         <activity
-            android:name=".UI.LoginActivity"
-            android:parentActivityName=".UI.SplashActivity" />
+            android:name=".UI.LoginActivity" />
         <activity android:name=".UI.SplashActivity">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
