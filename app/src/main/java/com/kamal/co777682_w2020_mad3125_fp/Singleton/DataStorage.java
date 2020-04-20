@@ -51,11 +51,11 @@ public class DataStorage {
         customers.add(c2);
         customers.add(c3);
         c1.addBill(i1.getBillId(),i1);
-        c1.addBill(m1.getBillId(),m1);
-        c1.addBill(h1.getBillId(),h1);
         c2.addBill(h2.getBillId(),h2);
         c2.addBill(i2.getBillId(),i2);
         c3.addBill(i3.getBillId(),i3);
+        c1.addBill(m1.getBillId(),m1);
+        c1.addBill(h1.getBillId(),h1);
         //c1.getBills();
     }
 }
