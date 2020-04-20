@@ -25,7 +25,7 @@ public class LoginActivity extends AppCompatActivity {
     private SharedPreferences myPref;
     @Override
     protected void onCreate(Bundle savedInstanceState) {
-
+        DataStorage.getInstance().loadCustomerDetails();
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_login);
         ActionBar actionBar = getSupportActionBar();

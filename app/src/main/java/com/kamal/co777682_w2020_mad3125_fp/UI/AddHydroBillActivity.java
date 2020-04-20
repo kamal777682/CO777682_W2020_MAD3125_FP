@@ -23,13 +23,12 @@ public class AddHydroBillActivity extends AppCompatActivity implements DatePicke
 
     private TextInputEditText billId;
     private TextInputEditText billDate;
-    private TextInputEditText billType;
     private TextInputEditText AgencyName;
     private TextInputEditText UnitConsumed;
     private TextInputEditText billAmount;
     private Button btnSave;
-    private Button btnCancel;
-        public static Customers customer1 ;
+
+    public static Customers customer1 ;
 
 
     @Override
@@ -40,12 +39,10 @@ public class AddHydroBillActivity extends AppCompatActivity implements DatePicke
         actionBar.setTitle("Add Hydro Bill");
         billId = findViewById(R.id.txtBillID);
         billDate = findViewById(R.id.txtBillDate);
-        billType = findViewById(R.id.txtBillType);
         AgencyName = findViewById(R.id.txtAgencyName);
         UnitConsumed = findViewById(R.id.txtUnitConsumed);
         billAmount = findViewById(R.id.txtBillAmount);
         btnSave = findViewById(R.id.btnSave);
-        btnCancel= findViewById(R.id.btnCancel);
         findViewById(R.id.btnDatePicker).setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
@@ -58,7 +55,6 @@ public class AddHydroBillActivity extends AppCompatActivity implements DatePicke
             public void onClick(View v) {
                 String billid = billId.getText().toString().trim();
                 String billdate = billDate.getText().toString().trim();
-                String billtype = billType.getText().toString().trim();
                 String billamount = billAmount.getText().toString().trim();
                 String agName = AgencyName.getText().toString().trim();
                 String Ucons = UnitConsumed.getText().toString().trim();
@@ -69,10 +65,8 @@ public class AddHydroBillActivity extends AppCompatActivity implements DatePicke
                 if(billdate.isEmpty())
                 {
                     billDate.setError("Enter Bill Date");
-                } if(billtype.isEmpty())
-                {
-                    billType.setError("Enter Bill Type");
-                } if(billamount.isEmpty())
+                }
+                if(billamount.isEmpty())
                 {
                     billAmount.setError("Enter Bill Amount");
                 } if(agName.isEmpty())
