@@ -5,6 +5,8 @@
 1. Splash Screen added.
 2. Validations are added in login screen and fixed email is used for login.
 3. Singleton class is created tp store data .
+4. DOCUMENT FILE IS ADDED aS C0777682_w2020_MAD3125_FP.DOCX
+
 
 REFFERENCES:
 
