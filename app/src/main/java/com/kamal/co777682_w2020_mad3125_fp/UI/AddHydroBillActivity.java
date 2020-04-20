@@ -60,6 +60,22 @@ public class AddHydroBillActivity extends AppCompatActivity implements DatePicke
                 {
                     billId.setError("Enter Bill Id");
                 }
+                if(billdate.isEmpty())
+                {
+                    billDate.setError("Enter Bill Date");
+                } if(billtype.isEmpty())
+                {
+                    billType.setError("Enter Bill Type");
+                } if(billamount.isEmpty())
+                {
+                    billAmount.setError("Enter Bill Amount");
+                } if(agName.isEmpty())
+                {
+                    AgencyName.setError("Enter the Agency Name");
+                } if(Ucons.isEmpty())
+                {
+                    UnitConsumed.setError("Enter the Unit Consumed");
+                }
             }
         });
     }
