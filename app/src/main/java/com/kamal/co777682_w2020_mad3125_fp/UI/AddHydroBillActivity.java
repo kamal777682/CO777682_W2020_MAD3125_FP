@@ -35,6 +35,7 @@ public class AddHydroBillActivity extends AppCompatActivity implements DatePicke
         setContentView(R.layout.activity_add_hydro_bill);
         ActionBar actionBar = getSupportActionBar();
         actionBar.setTitle("Add Hydro Bill");
+
         billId = findViewById(R.id.txtBillID);
         billDate = findViewById(R.id.txtBillDate);
         AgencyName = findViewById(R.id.txtAgencyName);

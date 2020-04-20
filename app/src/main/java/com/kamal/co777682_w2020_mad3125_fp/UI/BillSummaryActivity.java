@@ -6,6 +6,7 @@ import androidx.appcompat.app.AppCompatActivity;
 import android.os.Bundle;
 import android.widget.TextView;
 
+import com.kamal.co777682_w2020_mad3125_fp.DataStorage;
 import com.kamal.co777682_w2020_mad3125_fp.Models.Bill;
 import com.kamal.co777682_w2020_mad3125_fp.Models.Customers;
 import com.kamal.co777682_w2020_mad3125_fp.Models.HydroBill;
@@ -38,7 +39,9 @@ public class BillSummaryActivity extends AppCompatActivity {
         ActionBar ab = getSupportActionBar();
         ab.setTitle("         Bill Details      ");
 
-     //   Customers tempObj = (Customers) getIntent().getSerializableExtra("CustomerObj");
+       //  Bill tempObj = (DataStorage.getInstance().getBill()).get(getIntent().getIntExtra("billObj",0));
+
+        //   Customers tempObj = (Customers) getIntent().getSerializableExtra("CustomerObj");
 
         Bill tempObj = (Bill) getIntent().getSerializableExtra("billObj");
 
