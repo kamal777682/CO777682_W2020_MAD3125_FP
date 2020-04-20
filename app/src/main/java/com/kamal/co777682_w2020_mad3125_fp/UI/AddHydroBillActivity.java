@@ -29,8 +29,6 @@ public class AddHydroBillActivity extends AppCompatActivity implements DatePicke
     private Button btnSave;
 
     public static Customers cust;
-
-
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);

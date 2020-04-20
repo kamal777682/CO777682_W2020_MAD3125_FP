@@ -71,8 +71,7 @@ public class BillSummaryActivity extends AppCompatActivity {
             txt2.setText("Unit Consumed");
             txtinfo2.setText(hydroBill.getUnitConsumed().toString());
         }
-
-        if(tempObj.getBillType().contains("Internet"))
+        else if(tempObj.getBillType().contains("Internet"))
         {
             InternetBill internetBill = (InternetBill) tempObj;
             txt1.setText("Provider Name: ");
@@ -80,8 +79,7 @@ public class BillSummaryActivity extends AppCompatActivity {
 
             txt2.setText("Internet Usage : ");
             txtinfo2.setText(internetBill.getInternetGBUsed());
-        }
-        if(tempObj.getBillType().contains("Mobile"))
+        }else if(tempObj.getBillType().contains("Mobile"))
         {
            MobileBill mobileBill = (MobileBill) tempObj;
             txt1.setText("Manufacturer Name : ");
