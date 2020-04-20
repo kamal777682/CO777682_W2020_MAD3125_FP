@@ -46,6 +46,12 @@ public class AddHydroBillActivity extends AppCompatActivity implements DatePicke
                 showDatePickerDialog();
             }
         });
+
+        btnSave.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+            }
+        });
     }
     private void showDatePickerDialog(){
         DatePickerDialog datePickerDialog = new DatePickerDialog(
