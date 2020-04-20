@@ -37,8 +37,8 @@ public class AddNewCustomerActivity extends AppCompatActivity {
         custId = findViewById(R.id.txtCustID);
         fName = findViewById(R.id.txtFirstName);
         lName = findViewById(R.id.txtLastName);
-        city = findViewById(R.id.txtCity);
         email = findViewById(R.id.txtCustEmail);
+        city = findViewById(R.id.txtCity);
         btnSave = findViewById(R.id.btnSave);
         btnSave.setOnClickListener(new View.OnClickListener() {
             @Override
@@ -67,7 +67,7 @@ public class AddNewCustomerActivity extends AppCompatActivity {
                 //https://stackoverflow.com/questions/43747709/how-to-obtain-a-regular-expression-for-validation-email-address-for-one-domain-o
                 else if (email.getText().toString().matches("[A-Z0-9a-z._%+-]+@[A-Za-z0-9.-]+\\.[A-Za-z]{2,64}"))
                 {
-                    Customers tempObj = new Customers(customerId, firstName, lastName, Ccity, Cemail);
+                    Customers tempObj = new Customers(customerId, firstName, lastName, Cemail,Ccity);
                     DataStorage.getInstance().customers.add(tempObj);
                     Intent mIntent = new Intent(AddNewCustomerActivity.this, CustomerListActivity.class);
                     mIntent.putExtra("CRACustomerObj", tempObj);

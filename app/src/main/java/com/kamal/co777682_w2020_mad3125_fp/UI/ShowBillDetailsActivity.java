@@ -32,6 +32,7 @@ public class ShowBillDetailsActivity extends AppCompatActivity {
     private RecyclerView rvbills;
     private ArrayList<Bill> bills;
     private ShowBillListAdapter showBillListAdapter;
+    private Customers tempObj;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -47,7 +48,7 @@ public class ShowBillDetailsActivity extends AppCompatActivity {
         txtTotalBill = findViewById(R.id.textView7);
         rvbills = findViewById(R.id.rvbills);
 
-       Customers tempObj = (Customers) getIntent().getSerializableExtra("CustomerObj");
+        tempObj = (Customers) getIntent().getSerializableExtra("CustomerObj");
 
         txtCustomerId.setText("Customer's Id :  " + " " +tempObj.getCustomerId());
         txtName.setText("Customer's Name : " + " " +tempObj.getFullName());
@@ -73,6 +74,7 @@ public class ShowBillDetailsActivity extends AppCompatActivity {
     public boolean onOptionsItemSelected(@NonNull MenuItem item) {
         switch (item.getItemId()) {
             case R.id.add_hydro:
+                AddHydroBillActivity.customer = tempObj;
                 Intent hIntent = new Intent((ShowBillDetailsActivity.this), AddHydroBillActivity.class);
                 startActivity(hIntent);
                 return true;

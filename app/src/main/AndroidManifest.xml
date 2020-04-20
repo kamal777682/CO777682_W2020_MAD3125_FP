@@ -13,9 +13,9 @@
         <activity android:name=".UI.AddNewCustomerActivity" />
         <activity
             android:name=".UI.ShowBillDetailsActivity" />
-        <activity android:name=".UI.AddMobileBillActivity" />
-        <activity android:name=".UI.AddInternetBillActivity" />
-        <activity android:name=".UI.AddHydroBillActivity" />
+        <activity android:name=".UI.AddMobileBillActivity" android:parentActivityName=".UI.ShowBillDetailsActivity" />
+        <activity android:name=".UI.AddInternetBillActivity" android:parentActivityName=".UI.ShowBillDetailsActivity" />
+        <activity android:name=".UI.AddHydroBillActivity" android:parentActivityName=".UI.ShowBillDetailsActivity"/>
         <activity android:name=".UI.CustomerListActivity" />
         <activity
             android:name=".UI.LoginActivity" />

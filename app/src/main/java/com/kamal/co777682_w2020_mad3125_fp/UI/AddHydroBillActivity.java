@@ -4,12 +4,17 @@ import androidx.appcompat.app.ActionBar;
 import androidx.appcompat.app.AppCompatActivity;
 
 import android.app.DatePickerDialog;
+import android.content.Intent;
 import android.os.Bundle;
 import android.view.View;
 import android.widget.Button;
 import android.widget.DatePicker;
 
 import com.google.android.material.textfield.TextInputEditText;
+import com.kamal.co777682_w2020_mad3125_fp.DataStorage;
+import com.kamal.co777682_w2020_mad3125_fp.Models.Bill;
+import com.kamal.co777682_w2020_mad3125_fp.Models.Customers;
+import com.kamal.co777682_w2020_mad3125_fp.Models.HydroBill;
 import com.kamal.co777682_w2020_mad3125_fp.R;
 
 import java.util.Calendar;
@@ -24,6 +29,7 @@ public class AddHydroBillActivity extends AppCompatActivity implements DatePicke
     private TextInputEditText billAmount;
     private Button btnSave;
     private Button btnCancel;
+        public static Customers customer ;
 
 
     @Override
@@ -75,6 +81,13 @@ public class AddHydroBillActivity extends AppCompatActivity implements DatePicke
                 } if(Ucons.isEmpty())
                 {
                     UnitConsumed.setError("Enter the Unit Consumed");
+                }
+                else
+                {
+                    HydroBill hydro = new HydroBill(billid,billdate,Double.parseDouble(billamount),agName,Double.parseDouble(Ucons));
+                    customer.addBill(hydro.getBillId(), hydro);
+                    Intent hintent = new Intent(AddHydroBillActivity.this,ShowBillDetailsActivity.class);
+                    startActivity(hintent);
                 }
             }
         });
