@@ -13,7 +13,7 @@ import android.widget.Button;
 import android.widget.CheckBox;
 
 import com.google.android.material.textfield.TextInputEditText;
-import com.kamal.co777682_w2020_mad3125_fp.DataStorage;
+import com.kamal.co777682_w2020_mad3125_fp.Singleton.DataStorage;
 import com.kamal.co777682_w2020_mad3125_fp.R;
 
 public class LoginActivity extends AppCompatActivity {

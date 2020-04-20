@@ -10,9 +10,7 @@ import android.view.Menu;
 import android.view.MenuItem;
 import android.widget.TextView;
 
-import com.kamal.co777682_w2020_mad3125_fp.DataStorage;
 import com.kamal.co777682_w2020_mad3125_fp.Models.Bill;
-import com.kamal.co777682_w2020_mad3125_fp.Models.Customers;
 import com.kamal.co777682_w2020_mad3125_fp.Models.HydroBill;
 import com.kamal.co777682_w2020_mad3125_fp.Models.InternetBill;
 import com.kamal.co777682_w2020_mad3125_fp.Models.MobileBill;

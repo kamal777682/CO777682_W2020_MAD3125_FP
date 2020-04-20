@@ -1,4 +1,4 @@
-package com.kamal.co777682_w2020_mad3125_fp;
+package com.kamal.co777682_w2020_mad3125_fp.Singleton;
 
 import com.kamal.co777682_w2020_mad3125_fp.Models.Bill;
 import com.kamal.co777682_w2020_mad3125_fp.Models.Customers;
@@ -56,7 +56,7 @@ public class DataStorage {
         c2.addBill(h2.getBillId(),h2);
         c2.addBill(i2.getBillId(),i2);
         c3.addBill(i3.getBillId(),i3);
-        c1.getBills();
+        //c1.getBills();
     }
 }
 

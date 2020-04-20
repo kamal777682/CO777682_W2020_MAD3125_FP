@@ -6,7 +6,6 @@ import android.content.Intent;
 import android.os.Bundle;
 import android.os.Handler;
 
-import com.kamal.co777682_w2020_mad3125_fp.DataStorage;
 import com.kamal.co777682_w2020_mad3125_fp.R;
 
 public class SplashActivity extends AppCompatActivity {

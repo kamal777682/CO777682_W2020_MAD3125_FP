@@ -7,16 +7,13 @@ import androidx.recyclerview.widget.RecyclerView;
 
 import android.content.Intent;
 import android.os.Bundle;
-import android.util.Log;
 import android.view.Menu;
 import android.view.MenuItem;
 import android.widget.TextView;
 import android.widget.Toast;
 
-import com.google.android.material.textfield.TextInputEditText;
 import com.kamal.co777682_w2020_mad3125_fp.Adapters.ShowBillListAdapter;
-import com.kamal.co777682_w2020_mad3125_fp.Adapters.ShowBillListAdapter;
-import com.kamal.co777682_w2020_mad3125_fp.DataStorage;
+import com.kamal.co777682_w2020_mad3125_fp.Singleton.DataStorage;
 import com.kamal.co777682_w2020_mad3125_fp.Models.Bill;
 import com.kamal.co777682_w2020_mad3125_fp.Models.Customers;
 import com.kamal.co777682_w2020_mad3125_fp.R;

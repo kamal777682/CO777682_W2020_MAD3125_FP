@@ -11,8 +11,6 @@ import android.widget.Button;
 import android.widget.DatePicker;
 
 import com.google.android.material.textfield.TextInputEditText;
-import com.kamal.co777682_w2020_mad3125_fp.DataStorage;
-import com.kamal.co777682_w2020_mad3125_fp.Models.Bill;
 import com.kamal.co777682_w2020_mad3125_fp.Models.Customers;
 import com.kamal.co777682_w2020_mad3125_fp.Models.HydroBill;
 import com.kamal.co777682_w2020_mad3125_fp.R;

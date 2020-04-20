@@ -12,7 +12,7 @@ import android.view.Menu;
 import android.view.MenuItem;
 
 import com.kamal.co777682_w2020_mad3125_fp.Adapters.CustomerListAdapter;
-import com.kamal.co777682_w2020_mad3125_fp.DataStorage;
+import com.kamal.co777682_w2020_mad3125_fp.Singleton.DataStorage;
 import com.kamal.co777682_w2020_mad3125_fp.Models.Customers;
 import com.kamal.co777682_w2020_mad3125_fp.R;
 
