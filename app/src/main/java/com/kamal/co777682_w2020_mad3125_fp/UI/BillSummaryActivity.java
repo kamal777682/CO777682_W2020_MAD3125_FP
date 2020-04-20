@@ -92,13 +92,13 @@ public class BillSummaryActivity extends AppCompatActivity {
             txtinfo2.setText(mobileBill.getMobilePlan());
 
             txt3.setText("Mobile Number : ");
-            txtinfo3.setText(mobileBill.getMobileNumber());
+            txtinfo3.setText(mobileBill.getMobileNumber() + " ");
 
             txt4.setText("Internet Used(GB) : ");
-            txtinfo4.setText(mobileBill.getInternetGBUsed());
+            txtinfo4.setText(mobileBill.getInternetGBUsed() +  " GB ");
 
-            txt5.setText(" Minute Used In Talk :");
-            txtinfo5.setText(mobileBill.getMinuteUsed());
+            txt5.setText("Minute Used In Talk :");
+            txtinfo5.setText(mobileBill.getMinuteUsed()+ "min");
         }
     }
 }
