@@ -227,12 +227,13 @@
         android:layout_height="wrap_content"
         android:layout_marginTop="8dp"
         android:layout_marginEnd="16dp"
+        android:background="@android:color/white"
         android:ems="9"
         android:fontFamily="sans-serif-condensed-medium"
         android:text="TextView"
         android:textAlignment="viewEnd"
-        android:textColor="@android:color/darker_gray"
 
+        android:textColor="@android:color/holo_orange_light"
         android:textSize="18sp"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/textView23" />
@@ -258,11 +259,12 @@
         android:layout_height="wrap_content"
         android:layout_marginTop="8dp"
         android:layout_marginEnd="16dp"
+        android:background="@android:color/white"
         android:ems="9"
         android:fontFamily="sans-serif-condensed-medium"
         android:text="TextView"
         android:textAlignment="viewEnd"
-        android:textColor="@android:color/darker_gray"
+        android:textColor="@android:color/holo_red_dark"
         android:textSize="18sp"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/textView25" />

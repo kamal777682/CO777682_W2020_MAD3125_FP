@@ -37,10 +37,7 @@ public class BillSummaryActivity extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_bill_summary);
 
-        ActionBar ab = getSupportActionBar();
-        ab.setTitle("         Bill Details      ");
-
-       //  Bill tempObj = (DataStorage.getInstance().getBill()).get(getIntent().getIntExtra("billObj",0));
+        //  Bill tempObj = (DataStorage.getInstance().getBill()).get(getIntent().getIntExtra("billObj",0));
 
         //   Customers tempObj = (Customers) getIntent().getSerializableExtra("CustomerObj");
         tempObj = (Bill) getIntent().getSerializableExtra("billObj");
@@ -63,10 +60,13 @@ public class BillSummaryActivity extends AppCompatActivity {
         billId.setText(tempObj.getBillId());
         billType.setText(tempObj.getBillType());
         billDate.setText(tempObj.getBillDate());
-        billAmount.setText(tempObj.getTotalBillAmount().toString());
+        billAmount.setText(" $ "+tempObj.getTotalBillAmount().toString());
 
         if(tempObj.getBillType().contains("Hydro"))
         {
+            ActionBar ab1 = getSupportActionBar();
+            ab1.setTitle(" Hydro Bill Details");
+
             HydroBill hydroBill = (HydroBill) tempObj;
             txt1.setText("Agency Name");
             txtinf01.setText(hydroBill.getAgencyName());
@@ -76,6 +76,9 @@ public class BillSummaryActivity extends AppCompatActivity {
         }
         else if(tempObj.getBillType().contains("Internet"))
         {
+            ActionBar ab1 = getSupportActionBar();
+            ab1.setTitle(" Internet Bill Details");
+
             InternetBill internetBill = (InternetBill) tempObj;
             txt1.setText("Provider Name: ");
             txtinf01.setText(internetBill.getInternetProvider());
@@ -84,7 +87,10 @@ public class BillSummaryActivity extends AppCompatActivity {
             txtinfo2.setText(internetBill.getInternetGBUsed() + "GB");
         }else if(tempObj.getBillType().contains("Mobile"))
         {
-           MobileBill mobileBill = (MobileBill) tempObj;
+            ActionBar ab1 = getSupportActionBar();
+            ab1.setTitle(" Mobile  Bill Details");
+
+            MobileBill mobileBill = (MobileBill) tempObj;
             txt1.setText("Manufacturer Name : ");
             txtinf01.setText(mobileBill.getManufacturerName());
 
@@ -98,7 +104,7 @@ public class BillSummaryActivity extends AppCompatActivity {
             txtinfo4.setText(mobileBill.getInternetGBUsed() +  " GB ");
 
             txt5.setText("Minute Used In Talk :");
-            txtinfo5.setText(mobileBill.getMinuteUsed()+ "min");
+            txtinfo5.setText(mobileBill.getMinuteUsed()+ " min");
         }
     }
 }
