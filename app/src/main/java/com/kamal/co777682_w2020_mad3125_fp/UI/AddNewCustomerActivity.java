@@ -74,7 +74,7 @@ public class AddNewCustomerActivity extends AppCompatActivity {
                     AlertDialog.Builder alert = new AlertDialog.Builder(AddNewCustomerActivity.this);
                     alert.setCancelable(false);
                     alert.setTitle(" Error");
-                    alert.setMessage("Invalid Details");
+                    alert.setMessage("Invalid EMAIL");
                     alert.setPositiveButton("OK", new DialogInterface.OnClickListener() {
                         @Override
                         public void onClick(DialogInterface dialog, int n) {
