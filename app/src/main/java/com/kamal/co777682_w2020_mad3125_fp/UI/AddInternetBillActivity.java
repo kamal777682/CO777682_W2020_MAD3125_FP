@@ -26,8 +26,8 @@ public class AddInternetBillActivity extends AppCompatActivity implements DatePi
     private TextInputEditText billAmount;
     private Button btnSave;
     private Button btnCancel;
-    public  static   Customers cust;
 
+    public  static  Customers cust;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -68,8 +68,8 @@ public class AddInternetBillActivity extends AppCompatActivity implements DatePi
                 }
                 else
                 {
-                    InternetBill tempInternet = new InternetBill(billid,billdate,Double.parseDouble(billamount),intP, Integer.parseInt(usage));
-                    cust.addBill(tempInternet.getBillId(), tempInternet);
+                    InternetBill internetBill = new InternetBill(billid,billdate,Double.parseDouble(billamount),intP, Integer.parseInt(usage));
+                    cust.addBill(internetBill.getBillId(), internetBill);
                     Intent intent = new Intent(AddInternetBillActivity.this,ShowBillDetailsActivity.class);
                     startActivity(intent);
                 }

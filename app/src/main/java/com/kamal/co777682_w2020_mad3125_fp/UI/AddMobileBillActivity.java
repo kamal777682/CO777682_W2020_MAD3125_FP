@@ -30,7 +30,7 @@ public class AddMobileBillActivity extends AppCompatActivity implements DatePick
     private TextInputEditText minuteUsed;
     private Button btnSave;
 
-    private static Customers customer1;
+    public static Customers cust;
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -92,7 +92,7 @@ public class AddMobileBillActivity extends AppCompatActivity implements DatePick
                 else
                 {
                     MobileBill mobileBill = new MobileBill(billid,billdate,Double.parseDouble(billamount),mName,mobP,mobN,Integer.parseInt(iUsed),Integer.parseInt(mUsed));
-                    //customer1.addBill(mobileBill.getBillId(), mobileBill);
+                    cust.addBill(mobileBill.getBillId(), mobileBill);
                     Intent intent = new Intent(AddMobileBillActivity.this,ShowBillDetailsActivity.class);
                     startActivity(intent);
                 }

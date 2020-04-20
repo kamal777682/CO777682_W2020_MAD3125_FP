@@ -46,6 +46,7 @@ public class BillSummaryActivity extends AppCompatActivity {
         billType.setText(tempObj.getBillType());
         billDate.setText(tempObj.getBillDate());
         billAmount.setText(tempObj.getTotalBillAmount().toString());
+        
 
     }
 }

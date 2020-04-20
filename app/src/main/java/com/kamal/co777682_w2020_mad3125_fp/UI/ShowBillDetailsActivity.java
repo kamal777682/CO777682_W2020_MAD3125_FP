@@ -77,14 +77,15 @@ public class ShowBillDetailsActivity extends AppCompatActivity {
             case R.id.add_hydro:
                 AddHydroBillActivity.cust = tempObj;
                 Intent hIntent = new Intent((ShowBillDetailsActivity.this), AddHydroBillActivity.class);
-                //hIntent.putExtra("customer1",tempObj);
                 startActivity(hIntent);
                 return true;
             case R.id.add_internet:
+                AddInternetBillActivity.cust = tempObj;
                 Intent iIntent = new Intent((ShowBillDetailsActivity.this),AddInternetBillActivity.class);
                 startActivity(iIntent);
                 return true;
             case R.id.add_mobile:
+                AddMobileBillActivity.cust = tempObj;
                 Intent mIntent = new Intent((ShowBillDetailsActivity.this), AddMobileBillActivity.class);
                 startActivity(mIntent);
                 return true;
