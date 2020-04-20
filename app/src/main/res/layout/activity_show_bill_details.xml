@@ -153,7 +153,7 @@
         android:layout_marginStart="8dp"
         android:layout_marginTop="16dp"
         android:layout_marginEnd="8dp"
-        android:fontFamily="@font/alegreya_black_italic"
+        android:fontFamily="@font/almendra_bold_italic"
         android:text="Bills Information"
         android:textAlignment="center"
         android:textColor="@android:color/black"
