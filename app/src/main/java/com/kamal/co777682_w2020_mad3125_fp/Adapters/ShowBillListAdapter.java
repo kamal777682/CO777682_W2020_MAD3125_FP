@@ -38,9 +38,9 @@ public class ShowBillListAdapter extends  RecyclerView.Adapter<ShowBillListAdapt
     @Override
     public void onBindViewHolder(@NonNull final ShowBillListAdapter.ShowBillViewHolder holder, final int position) {
         final Bill mbill= this.billArrayList.get(position);
-       holder.billType.setText("Bill Type   :   " +mbill.getBillType());
-       holder.billDate.setText("Bill Date   :   "+mbill.getBillDate());
-       holder.billAmount.setText("Bill Amount   :   "+mbill.getTotalBillAmount().toString());
+       holder.billType.setText(mbill.getBillType());
+       holder.billDate.setText(mbill.getBillDate());
+       holder.billAmount.setText(" $ "+mbill.getTotalBillAmount().toString());
 
         holder.itemView.setOnClickListener(new View.OnClickListener() {
             @Override

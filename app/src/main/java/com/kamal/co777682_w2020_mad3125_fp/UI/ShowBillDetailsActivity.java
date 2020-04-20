@@ -51,11 +51,11 @@ public class ShowBillDetailsActivity extends AppCompatActivity {
 
         tempObj = (DataStorage.getInstance().getCustomers()).get(getIntent().getIntExtra("CustomerObj",0));
 
-        txtCustomerId.setText("Customer's Id :  " + " " +tempObj.getCustomerId());
-        txtName.setText("Customer's Name : " + " " +tempObj.getFullName());
-        txtCity.setText("Customer's City : "+ " "+tempObj.getCity());
-        txtEmail.setText("Email :      "+ " " + tempObj.getEmail());
-        txtTotalBill.setText("Total BIll To Pay : "+ " "+ tempObj.getTotalBill());
+        txtCustomerId.setText(tempObj.getCustomerId());
+        txtName.setText(tempObj.getFullName());
+        txtCity.setText(tempObj.getCity());
+        txtEmail.setText(tempObj.getEmail());
+        txtTotalBill.setText("Total Bill to Pay :                        "+" $ "+ tempObj.getTotalBill());
 
         Toast.makeText(this, tempObj.getFullName(), Toast.LENGTH_SHORT).show();
 
