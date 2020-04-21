@@ -21,7 +21,6 @@
 |![image](https://user-images.githubusercontent.com/60160730/79814292-dd7d8c80-834b-11ea-9f86-fe51eced8fac.png)| Adding new Customer in list by clicking on the (+) icon . Email validation is there to validate Data |
 |![image](https://user-images.githubusercontent.com/60160730/79814387-1c134700-834c-11ea-9b2a-d154c178f4af.png)|  New Customer Successfully added |
 |![image](https://user-images.githubusercontent.com/60160730/79814480-5381f380-834c-11ea-934e-4a51ab1f4c46.png)| Showing details of new customer |
-|![image](https://user-images.githubusercontent.com/60160730/79814546-8d52fa00-834c-11ea-9701-ddd4cefab46e.png)| New bill added to the newly created to the customer |
 |![image](https://user-images.githubusercontent.com/60160730/79813402-8c6c9900-8349-11ea-9fff-ddc227390604.png)| Customer details are shown in ShowBillDetailsActivity.we can Use menu to add new bill(Hydro,Internet and Mobile)  |
 |![image](https://user-images.githubusercontent.com/60160730/79813505-d9e90600-8349-11ea-8e85-4dce7dfa66ca.png)| Adding new Hydro Bill(Similarly we can add Internet and Mobile Bill) Also the validations are applied on it  |
 |![image](https://user-images.githubusercontent.com/60160730/79813784-98a52600-834a-11ea-9833-3be362f06703.png)| Date Picker is added to add BillDate |
