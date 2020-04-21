@@ -1,10 +1,13 @@
 ### CO777682_W2020_MAD3125_FP
+## Student ID : CO777682
+## Student Name : Kamalpreet Kaur
 
 ## Billing System
 
 1. Splash Screen added.
 2. Validations are added in login screen and fixed email is used for login.
 3. Singleton class is created tp store data .
+4. Kotlin file is created
 4. DOCUMENT FILE IS ADDED aS C0777682_w2020_MAD3125_FP.DOCX
 
 ### Preview
